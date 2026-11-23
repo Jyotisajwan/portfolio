@@ -846,3 +846,37 @@ body {
 .company-site-link { color: inherit; text-decoration: none; text-underline-offset: 3px; }
 .company-site-link:hover, .company-site-link:focus-visible { text-decoration: underline; }
 .company-site-link:focus-visible { outline: 2px solid currentColor; outline-offset: 3px; border-radius: 2px; }
+
+
+/* ══════════════════════════════
+   PHONE COMPATIBILITY
+   Everything here is scoped to small screens only, so the laptop/desktop
+   layout above is untouched.
+══════════════════════════════ */
+
+/* iOS Safari inflates text after rotating to landscape; keep sizes as designed. */
+html { -webkit-text-size-adjust: 100%; text-size-adjust: 100%; }
+
+@media (max-width: 860px) {
+  /* Grid items default to min-width:auto, so long unbreakable text (email,
+     LinkedIn URL) could widen the single column past a narrow screen. */
+  .contact-layout > * { min-width: 0; }
+}
+
+@media (max-width: 640px) {
+  /* .hero is a column flexbox and .container centres itself with auto margins,
+     so it shrink-wrapped to its widest child and stretched the whole page
+     wider than the screen. Pin it to the screen width. */
+  .hero > .container { width: 100%; }
+
+  /* Stat strip: let each stat size to its content (no overlap), keep the
+     strip horizontally scrollable. */
+  .impact-item { flex: 0 0 auto; }
+  .imp-num { white-space: nowrap; }
+
+  /* iOS Safari zooms the page in when a field under 16px is focused. */
+  .field input, .field textarea { font-size: 16px; }
+
+  /* Give the open menu a bottom edge so it doesn't blend into the page. */
+  .mobile-nav { border-bottom: 1px solid var(--border); box-shadow: 0 10px 24px rgba(0,0,0,.08); }
+}

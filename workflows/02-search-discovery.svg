@@ -1,0 +1,60 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="0 0 1400 310" role="img" aria-labelledby="title desc" width="1120" height="300">
+<ns0:title id="title">Search and Discovery workflow</ns0:title>
+<ns0:desc id="desc">At upload, slides are analysed by vision models. Gemini Flash extracts imagery, text, visual flow and business concept metadata, which is stored in a vector database. At search, a query enters Apache Solr for hybrid keyword and semantic retrieval, followed by relevance ranking and results. A 1,000-query evaluation recorded 99 percent solved and the no-results rate fell from 10 percent to under 1 percent.</ns0:desc>
+<ns0:defs>
+  <ns0:marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><ns0:path d="M1 1 L9 5 L1 9" fill="none" stroke="#222" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" /></ns0:marker>
+  <ns0:style>
+    text{font-family:Inter,Arial,sans-serif}.muted{fill:#85858b}.dark{fill:#222}.green{fill:#28734f}.small{font-size:12px}.tiny{font-size:10px}.label{font-size:11px;font-weight:700;letter-spacing:1px;fill:#85858b}.line{fill:none;stroke:#262626;stroke-width:1.5;marker-end:url(#arrow)}.dash{fill:#fbfbfc;stroke:#d8d8de;stroke-width:1.3;stroke-dasharray:5 5}.node{fill:#fff;stroke:#d6d6dc;stroke-width:1.3}.tag{fill:#fff;stroke:#a8c9b8;stroke-width:1.2}
+    @media(prefers-reduced-motion:reduce){animate,animateMotion{display:none}}
+  </ns0:style>
+</ns0:defs>
+
+<ns0:text x="25" y="24" class="label">AT UPLOAD</ns0:text>
+<ns0:rect x="25" y="42" width="95" height="60" rx="12" class="node" />
+<ns0:text x="72" y="78" text-anchor="middle" class="dark" font-size="14" font-weight="700">Slide</ns0:text>
+<ns0:path d="M120 72 H151" class="line" />
+<ns0:rect x="151" y="25" width="255" height="126" rx="16" class="dash" />
+<ns0:text x="168" y="46" class="label">VISION MODELS</ns0:text>
+<ns0:rect x="168" y="61" width="62" height="31" rx="16" class="node" /><ns0:text x="199" y="81" text-anchor="middle" class="muted" font-size="12" text-decoration="line-through">YOLO</ns0:text>
+<ns0:rect x="238" y="61" width="62" height="31" rx="16" class="node" /><ns0:text x="269" y="81" text-anchor="middle" class="muted" font-size="12" text-decoration="line-through">BLIP</ns0:text>
+<ns0:rect x="308" y="61" width="82" height="31" rx="16" fill="#202020" /><ns0:text x="349" y="81" text-anchor="middle" fill="#fff" font-size="12" font-weight="700">Gemini Flash</ns0:text>
+
+<ns0:path d="M390 76 C415 76 408 40 432 40 M390 76 C415 76 408 70 432 70 M390 76 C415 76 408 100 432 100 M390 76 C415 76 408 130 432 130" fill="none" stroke="#333" stroke-width="1.4" />
+<ns0:rect x="432" y="26" width="120" height="27" rx="14" class="tag" /><ns0:text x="492" y="44" text-anchor="middle" class="green" font-size="12" font-weight="600">Imagery</ns0:text>
+<ns0:rect x="432" y="56" width="120" height="27" rx="14" class="tag" /><ns0:text x="492" y="74" text-anchor="middle" class="green" font-size="12" font-weight="600">Text</ns0:text>
+<ns0:rect x="432" y="86" width="120" height="27" rx="14" class="tag" /><ns0:text x="492" y="104" text-anchor="middle" class="green" font-size="12" font-weight="600">Visual flow</ns0:text>
+<ns0:rect x="432" y="116" width="120" height="27" rx="14" class="tag" /><ns0:text x="492" y="134" text-anchor="middle" class="green" font-size="12" font-weight="600">Business concept</ns0:text>
+<ns0:path d="M552 40 C580 40 565 76 595 76 M552 70 C580 70 565 76 595 76 M552 100 C580 100 565 76 595 76 M552 130 C580 130 565 76 595 76" fill="none" stroke="#333" stroke-width="1.4" />
+
+<ns0:path d="M595 82 H610" class="line" />
+<ns0:ellipse cx="655" cy="67" rx="49" ry="11" fill="#fff" stroke="#222" stroke-width="1.5" /><ns0:path d="M606 67 V124 C606 138 704 138 704 124 V67" fill="#fff" stroke="#222" stroke-width="1.5" /><ns0:path d="M606 124 C606 138 704 138 704 124" fill="none" stroke="#222" stroke-width="1.5" />
+<ns0:text x="655" y="101" text-anchor="middle" class="dark" font-size="13" font-weight="700">Vector DB</ns0:text>
+<ns0:path d="M704 95 H735" class="line" />
+
+<ns0:text x="25" y="190" class="label">AT SEARCH</ns0:text>
+<ns0:rect x="25" y="207" width="95" height="60" rx="12" class="node" /><ns0:text x="72" y="243" text-anchor="middle" class="dark" font-size="14" font-weight="700">Query</ns0:text>
+<ns0:path d="M120 237 H735" class="line" />
+
+<ns0:rect x="735" y="55" width="205" height="195" rx="16" class="dash" />
+<ns0:text x="753" y="77" class="label">APACHE SOLR</ns0:text>
+<ns0:rect x="753" y="91" width="169" height="43" rx="12" class="node" /><ns0:text x="768" y="117" class="dark" font-size="13" font-weight="700">Keyword</ns0:text><ns0:text x="831" y="117" class="muted" font-size="12">· exact match</ns0:text>
+<ns0:rect x="753" y="146" width="169" height="43" rx="12" class="node" /><ns0:text x="768" y="172" class="dark" font-size="13" font-weight="700">Semantic</ns0:text><ns0:text x="825" y="172" class="muted" font-size="12">· embeddings</ns0:text>
+<ns0:text x="837" y="222" text-anchor="middle" class="muted" font-size="11">hybrid retrieval</ns0:text>
+<ns0:path d="M940 153 H974" class="line" />
+
+<ns0:rect x="974" y="119" width="142" height="70" rx="13" class="node" /><ns0:text x="1045" y="145" text-anchor="middle" class="dark" font-size="14" font-weight="700">Relevance</ns0:text><ns0:text x="1045" y="165" text-anchor="middle" class="muted" font-size="11">Visuals or data?</ns0:text>
+<ns0:path d="M1116 153 H1150" class="line" />
+
+<ns0:rect x="1150" y="121" width="165" height="64" rx="13" class="node" /><ns0:text x="1232" y="159" text-anchor="middle" class="dark" font-size="14" font-weight="700">Results</ns0:text>
+
+<ns0:path d="M1232 121 V92" class="line" />
+<ns0:rect x="1150" y="30" width="165" height="62" rx="12" class="node" /><ns0:text x="1232" y="54" text-anchor="middle" class="dark" font-size="13" font-weight="700">Eval · 1,000 queries</ns0:text><ns0:text x="1232" y="73" text-anchor="middle" class="muted" font-size="11">99% solved</ns0:text>
+
+<ns0:path d="M1232 185 V211" class="line" />
+<ns0:rect x="1150" y="211" width="165" height="57" rx="12" fill="#202020" /><ns0:text x="1232" y="233" text-anchor="middle" fill="#bdbdc2" font-size="11">No-results rate</ns0:text><ns0:text x="1232" y="253" text-anchor="middle" fill="#fff" font-size="16" font-weight="700">10% → &lt;1%</ns0:text>
+
+<ns0:path d="M1150 61 H1090 V14 H279 V25" fill="none" stroke="#8a8a90" stroke-width="1.3" stroke-dasharray="5 5" marker-end="url(#arrow)" />
+
+
+<ns0:circle r="5.5" fill="#28734f" stroke="#ffffff" stroke-width="2"><ns0:animateMotion dur="12.13s" repeatCount="indefinite" rotate="auto" path="M120 72 H151 M595 82 H610 M704 95 H735 M120 237 H735 M940 153 H974 M1116 153 H1150 M1232 121 V92 M1232 185 V211 M390 76 C415 76 408 40 432 40 M390 76 C415 76 408 70 432 70 M390 76 C415 76 408 100 432 100 M390 76 C415 76 408 130 432 130 M552 40 C580 40 565 76 595 76 M552 70 C580 70 565 76 595 76 M552 100 C580 100 565 76 595 76 M552 130 C580 130 565 76 595 76" /></ns0:circle><ns0:circle r="5.5" fill="#28734f" stroke="#ffffff" stroke-width="2"><ns0:animateMotion dur="12.13s" repeatCount="indefinite" rotate="auto" path="M120 72 H151 M595 82 H610 M704 95 H735 M120 237 H735 M940 153 H974 M1116 153 H1150 M1232 121 V92 M1232 185 V211 M390 76 C415 76 408 40 432 40 M390 76 C415 76 408 70 432 70 M390 76 C415 76 408 100 432 100 M390 76 C415 76 408 130 432 130 M552 40 C580 40 565 76 595 76 M552 70 C580 70 565 76 595 76 M552 100 C580 100 565 76 595 76 M552 130 C580 130 565 76 595 76"  begin="-0.8s"/></ns0:circle><ns0:circle r="5.5" fill="#28734f" stroke="#ffffff" stroke-width="2"><ns0:animateMotion dur="12.13s" repeatCount="indefinite" rotate="auto" path="M120 72 H151 M595 82 H610 M704 95 H735 M120 237 H735 M940 153 H974 M1116 153 H1150 M1232 121 V92 M1232 185 V211 M390 76 C415 76 408 40 432 40 M390 76 C415 76 408 70 432 70 M390 76 C415 76 408 100 432 100 M390 76 C415 76 408 130 432 130 M552 40 C580 40 565 76 595 76 M552 70 C580 70 565 76 595 76 M552 100 C580 100 565 76 595 76 M552 130 C580 130 565 76 595 76"  begin="-1.6s"/></ns0:circle></ns0:svg>

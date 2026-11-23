@@ -1,0 +1,22 @@
+<?xml version='1.0' encoding='utf-8'?>
+<ns0:svg xmlns:ns0="http://www.w3.org/2000/svg" viewBox="-65 0 1250 300" role="img" aria-label="Astrid Suggestions workflow: Search guidance when users need a better query" width="1120" height="300">
+<ns0:title>Astrid Suggestions workflow</ns0:title><ns0:desc>Search guidance when users need a better query</ns0:desc>
+<ns0:defs><ns0:marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><ns0:path d="M1 1 L9 5 L1 9" fill="none" stroke="#1a1a1a" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" /></ns0:marker></ns0:defs>
+<ns0:style>text{font-family:Inter,Arial,sans-serif} .muted{fill:#6e6e73} .node{fill:#fff;stroke:#d2d2d7;stroke-width:1.2} .connector{fill:none;stroke:#1a1a1a;stroke-width:1.6;marker-end:url(#arrow)} @media(prefers-reduced-motion:reduce){animate,animateMotion{display:none}}</ns0:style>
+<ns0:text x="28" y="30" font-size="11" font-weight="700" letter-spacing="1.4" fill="#6e6e73">WORKFLOW</ns0:text>
+<ns0:text x="28" y="60" font-size="23" font-weight="700" fill="#1a1a1a">Astrid Suggestions</ns0:text>
+<ns0:text x="28" y="82" font-size="13" class="muted">Search guidance when users need a better query</ns0:text><ns0:path class="connector" d="M120.0 171.0 H204.5" /><ns0:path class="connector" d="M382.5 171.0 H467.0" /><ns0:path class="connector" d="M645.0 171.0 H729.5" /><ns0:path class="connector" d="M907.5 171.0 H992.0" /><ns0:g><ns0:rect class="node" x="-50.0" y="130" width="170" height="82" rx="12" stroke="#d2d2d7" />
+<ns0:text x="35.0" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">1. User query</ns0:text>
+<ns0:text x="35.0" y="190" text-anchor="middle" font-size="10.5" class="muted">What the user types</ns0:text></ns0:g><ns0:g><ns0:rect class="node" x="212.5" y="130" width="170" height="82" rx="12" stroke="#d2d2d7" />
+<ns0:text x="297.5" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">2. Exact match</ns0:text>
+<ns0:text x="297.5" y="190" text-anchor="middle" font-size="10.5" class="muted">Find direct keyword matches</ns0:text></ns0:g><ns0:g><ns0:rect class="node" x="475.0" y="130" width="170" height="82" rx="12" stroke="#d2d2d7" />
+<ns0:text x="560.0" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">3. Partial match</ns0:text>
+<ns0:text x="560.0" y="190" text-anchor="middle" font-size="10.5" class="muted">Find related terms</ns0:text></ns0:g><ns0:g><ns0:rect class="node" x="737.5" y="130" width="170" height="82" rx="12" stroke="#d2d2d7" />
+<ns0:text x="822.5" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">4. Semantic match</ns0:text>
+<ns0:text x="822.5" y="190" text-anchor="middle" font-size="10.5" class="muted">Understand meaning</ns0:text></ns0:g><ns0:g><ns0:rect class="node" x="1000.0" y="130" width="170" height="82" rx="12" stroke="#1e6647" />
+<ns0:text x="1085.0" y="170" text-anchor="middle" font-size="14" font-weight="700" fill="#1a1a1a">5. Try Searching For</ns0:text>
+<ns0:text x="1085.0" y="190" text-anchor="middle" font-size="10.5" class="muted">Suggest synonyms &amp; alternatives</ns0:text></ns0:g>
+<ns0:rect x="28" y="250" width="1064" height="1" fill="#e5e5e7" />
+<ns0:text x="30" y="282" font-size="23" font-weight="750" fill="#1a1a1a">20K+ users</ns0:text>
+<ns0:text x="170" y="280" font-size="12" class="muted">Unique users in month one</ns0:text>
+<ns0:circle r="5.5" fill="#28734f" stroke="#ffffff" stroke-width="2"><ns0:animateMotion dur="3.22s" repeatCount="indefinite" rotate="auto" path="M120.0 171.0 H204.5 M382.5 171.0 H467.0 M645.0 171.0 H729.5 M907.5 171.0 H992.0" /></ns0:circle><ns0:circle r="5.5" fill="#28734f" stroke="#ffffff" stroke-width="2"><ns0:animateMotion dur="3.22s" repeatCount="indefinite" rotate="auto" path="M120.0 171.0 H204.5 M382.5 171.0 H467.0 M645.0 171.0 H729.5 M907.5 171.0 H992.0"  begin="-0.8s"/></ns0:circle><ns0:circle r="5.5" fill="#28734f" stroke="#ffffff" stroke-width="2"><ns0:animateMotion dur="3.22s" repeatCount="indefinite" rotate="auto" path="M120.0 171.0 H204.5 M382.5 171.0 H467.0 M645.0 171.0 H729.5 M907.5 171.0 H992.0"  begin="-1.6s"/></ns0:circle></ns0:svg>
