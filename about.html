@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About | Jyoti Sajwan</title>
+  <meta name="description" content="Associate Product Manager with 4+ years building AI search and automation products. My journey from analyst to PM, and what's on my bookshelf." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Lora:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about2.css" />
+</head>
+<body>
+  <script src="assets/svg-sprite.js"></script>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-1e23f2d197a8" /></svg>
+        Jyoti Sajwan
+      </a>
+      <div class="nav-links">
+        <div class="nav-desktop-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link" style="color:var(--black);font-weight:700">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <a href="contact.html" class="nav-cta">Get in touch</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html"   class="mob-link" onclick="closeNav()">Home</a>
+      <a href="about.html"   class="mob-link" onclick="closeNav()">About</a>
+      <a href="contact.html" class="mob-link" onclick="closeNav()">Contact</a>
+      <a href="contact.html" class="mob-link mob-cta" onclick="closeNav()">Get in touch</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════════════════
+         ABOUT HERO, intro + photo
+    ════════════════════════════════════ -->
+    <section class="about-hero">
+      <div class="grid-bg" aria-hidden="true"></div>
+      <div class="container">
+        <div class="about-grid">
+
+          <div class="about-intro">
+            <p class="eyebrow">About</p>
+            <h1 class="about-h1">Hi, I'm Jyoti</h1>
+            <div class="hero-rule"></div>
+            <p class="about-lead">An Associate Product Manager building AI search &amp; automation products, curious, data-driven, and a compulsive reader.</p>
+            <p class="about-text">I started out in fintech, fell for product along the way, and have spent the last few years turning messy problems into products people actually love. Off the clock, you'll usually find me deep in a crime novel.</p>
+            <div class="hero-ctas">
+              <a href="index.html" class="btn-primary">
+                See my work
+                <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+              </a>
+              <a href="contact.html" class="btn-ghost">Contact me</a>
+            </div>
+          </div>
+
+          <aside class="about-media">
+            <div class="photo-stack-wrap">
+              <div class="photo-stack single siri-host" id="siriHost">
+                <div class="photo-card active" id="aboutPhoto">
+                  <div class="photo-img-wrap">
+                    <img class="pc-real" src="photos/photo.jpg" alt="Jyoti Sajwan" onerror="showFallback(this,'🌿','Hi, I\'m Jyoti')" />
+                    <div class="photo-fallback" style="display:none"><span>🌿</span><p>Hi, I'm Jyoti</p></div>
+                    <div class="pc-memoji" aria-hidden="true">
+                      <img class="memoji-png" src="photos/art.webp" alt="Illustrated Jyoti" />
+                    </div>
+                  </div>
+                  <!-- Siri control bar overlaid on the photo (click to transform) -->
+                  <button class="siri-bar" id="siriButton" type="button" aria-pressed="false" aria-label="Turn the photo into an illustration">
+                    <span class="siri-orb-wrap">
+                      <svg class="siri-orb" viewBox="0 0 100 100" aria-hidden="true">
+                        <defs>
+                          <radialGradient id="siriBall" cx="50%" cy="42%" r="60%"><stop offset="0" stop-color="#23264a"/><stop offset=".65" stop-color="#0c0d1c"/><stop offset="1" stop-color="#020207"/></radialGradient>
+                          <linearGradient id="siriPink" x1="0" x2="1"><stop offset="0" stop-color="#ff2d8e" stop-opacity="0"/><stop offset=".5" stop-color="#ff4fa8"/><stop offset="1" stop-color="#ff2d8e" stop-opacity="0"/></linearGradient>
+                          <linearGradient id="siriBlue" x1="0" x2="1"><stop offset="0" stop-color="#1fb5ff" stop-opacity="0"/><stop offset=".5" stop-color="#37c8ff"/><stop offset="1" stop-color="#3d6bff" stop-opacity="0"/></linearGradient>
+                          <linearGradient id="siriGreen" x1="0" x2="1"><stop offset="0" stop-color="#2fe39c" stop-opacity="0"/><stop offset=".5" stop-color="#3cf0b0"/><stop offset="1" stop-color="#2fe39c" stop-opacity="0"/></linearGradient>
+                          <clipPath id="siriClip"><circle cx="50" cy="50" r="48"/></clipPath>
+                        </defs>
+                        <circle cx="50" cy="50" r="48" fill="url(#siriBall)"/>
+                        <g class="siri-ribbons" clip-path="url(#siriClip)">
+                          <path d="M6 50C22 22 38 22 50 50S78 78 94 50C78 36 64 38 50 50S22 64 6 50Z" fill="url(#siriBlue)" opacity=".95"/>
+                          <path d="M6 50C22 76 38 78 50 50S78 20 94 50C78 64 64 62 50 50S22 38 6 50Z" fill="url(#siriPink)" opacity=".95"/>
+                          <path d="M10 50C26 32 40 34 50 50S74 68 90 50C74 60 62 58 50 50S26 42 10 50Z" fill="url(#siriGreen)" opacity=".9"/>
+                        </g>
+                        <circle cx="50" cy="50" r="47.5" fill="none" stroke="#fff" stroke-opacity=".18"/>
+                      </svg>
+                    </span>
+                    <span class="siri-field"><span class="siri-text" id="siriText">Turn this into chibi art</span><span class="siri-caret"></span></span>
+                    <span class="siri-send" aria-hidden="true"><svg fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-721b4969ff7e" /></svg></span>
+                  </button>
+
+                  <!-- elegant light tracing the photo's border -->
+                  <div class="frame-trace" aria-hidden="true"></div>
+                </div>
+              </div>
+              <p class="sr-only" id="siriStatus" role="status"></p>
+            </div>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ══════════════════════════════════
+         BENTO, journey + bookshelf cards
+    ════════════════════════════════════ -->
+    <section class="bento-section">
+
+      <div class="container">
+        <div class="bento-grid">
+
+          <!-- ── Journey card ── -->
+          <article class="bento-card">
+            <div class="bento-illus scene journey-scene">
+              <img src="photos/chibi-journey-animated.gif" alt="Chibi career journey showing Analyst, APM and PM milestones" loading="eager">
+            </div>
+            <div class="bento-body">
+              <p class="bento-eyebrow">Career</p>
+              <h3 class="bento-title">My journey</h3>
+              <p class="bento-sub">Analyst → APM → PM · 2022 – Present.</p>
+              <a class="bento-btn" href="journey.html">
+                <span class="bento-btn-label">See the full timeline</span>
+                <svg class="bento-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+              </a>
+            </div>
+          </article>
+
+          <!-- ── Bookshelf card ── -->
+          <article class="bento-card">
+            <div class="bento-illus scene book-scene"><img src="photos/chibi-reading-animated.gif" alt="Chibi illustration of Jyoti reading a book" loading="eager"></div>
+            <div class="bento-body">
+              <p class="bento-eyebrow">Bookshelf</p>
+              <h3 class="bento-title">On my shelf</h3>
+              <p class="bento-sub">31 books, crime, fiction &amp; big ideas. Tap any cover to find it on Amazon.</p>
+              <a class="bento-btn" href="books.html">
+                <span class="bento-btn-label">Browse the shelf</span>
+                <svg class="bento-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+              </a>
+            </div>
+          </article>
+
+        </div><!-- /.bento-grid -->
+
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span class="footer-name">Jyoti Sajwan</span>
+      <span class="footer-copy">&copy; 2026 · Associate Product Manager</span>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Work</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <a href="https://linkedin.com/in/jyotisajwan" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="about2.js"></script>
+</body>
+</html>

@@ -1,0 +1,174 @@
+/* =====================================================================
+   workflows.css — single source of truth for every project diagram.
+
+   Every workflow / chart on the page is an inline <svg class="wf"> that
+   carries ONLY geometry and content. Colours, fonts, type sizes, stroke
+   widths, radii, dot look, figure spacing and reduced-motion handling
+   all live here.
+
+   To restyle all diagrams at once, change a token in :root below.
+   Shared SVG defs (arrowhead, area gradient) live once in index.html in
+   <svg class="wf-defs"> and are styled from this file too.
+   ===================================================================== */
+
+:root {
+  /* ── type ─────────────────────────────────────────────── */
+  --wf-font: 'Inter', Arial, sans-serif;
+  --wf-fs-eyebrow: 11px;     /* WORKFLOW / AT UPLOAD / 01 / KNOWLEDGE      */
+  --wf-fs-title: 23px;       /* diagram heading                            */
+  --wf-fs-sub: 13px;         /* line under the heading                     */
+  --wf-fs-node: 14px;        /* node title                                 */
+  --wf-fs-node-sm: 13px;     /* node title where the box is tight          */
+  --wf-fs-label: 12px;       /* secondary text, KPI caption, footnotes     */
+  --wf-fs-caption: 10.5px;   /* node sub-line                              */
+  --wf-fs-kpi: 23px;         /* headline number                            */
+  --wf-fw-regular: 400;
+  --wf-fw-tag: 600;
+  --wf-fw-strong: 700;
+  --wf-fw-kpi: 750;
+  --wf-tracking: 1.4px;      /* eyebrow letter-spacing                     */
+
+  /* ── colour ───────────────────────────────────────────── */
+  --wf-ink: var(--black, #1a1a1a);
+  --wf-muted: var(--muted, #6e6e73);
+  --wf-surface: #fff;
+  --wf-node-stroke: #d2d2d7;
+  --wf-rule: #e5e5e7;
+  --wf-line: var(--wf-ink);          /* connectors + arrowheads           */
+  --wf-line-soft: #8a8a90;           /* secondary / return connectors     */
+  --wf-accent: #28734f;              /* dots, data line, tag text         */
+  --wf-accent-strong: #1e6647;       /* emphasised node outline           */
+  --wf-accent-soft: #a8c9b8;         /* tag outline                       */
+  --wf-zone-fill: #fbfbfc;
+  --wf-zone-stroke: #d8d8de;
+  --wf-dark: #202020;                /* dark chips                        */
+  --wf-on-dark: #fff;
+  --wf-on-dark-muted: #bdbdc2;
+  --wf-dot-stroke: #fff;
+  --wf-area-opacity: .22;            /* top of the chart area gradient    */
+
+  /* ── stroke widths (unitless, SVG user units) ─────────── */
+  --wf-sw-node: 1.2;
+  --wf-sw-accent: 1.5;
+  --wf-sw-zone: 1.3;
+  --wf-sw-line: 1.6;
+  --wf-sw-data: 3;
+  --wf-sw-point: 2.5;
+  --wf-sw-dot: 2;
+
+  /* ── shape ────────────────────────────────────────────── */
+  --wf-r-node: 12px;
+  --wf-r-zone: 16px;
+  --wf-dot-r: 5.5px;
+
+  /* ── scale: every diagram renders at the same px-per-unit ─
+     A diagram's width is its viewBox width (--wf-vw, set on the
+     <svg>) relative to this reference, so type, strokes and dots
+     are the same physical size in every diagram.                     */
+  --wf-ref-width: 1250;
+  --wf-min-scale: .5;        /* below this px-per-unit the figure scrolls */
+
+  /* ── figure frame ─────────────────────────────────────── */
+  --wf-fig-bg: #fbfbfc;
+  --wf-fig-border: var(--border, #e5e5e5);
+  --wf-fig-radius: var(--r-md, 14px);
+  --wf-fig-pad: 18px 24px 14px;
+  --wf-fig-pad-sm: 10px;
+  --wf-fig-margin: 26px 0 30px;
+  --wf-fig-margin-sm: 20px 0 24px;
+}
+
+/* ── shared defs (hidden <svg class="wf-defs"> in index.html) ──── */
+.wf-defs { position: absolute; width: 0; height: 0; overflow: hidden; }
+.wf-arrowhead { fill: none; stroke: var(--wf-line); stroke-width: 1.5; stroke-linecap: round; stroke-linejoin: round; }
+.wf-area-stop { stop-color: var(--wf-accent); }
+.wf-area-stop--top { stop-opacity: var(--wf-area-opacity); }
+.wf-area-stop--bottom { stop-opacity: 0; }
+
+/* ── figure frame + caption ───────────────────────────────────── */
+.wf-figure {
+  margin: var(--wf-fig-margin);
+  padding: var(--wf-fig-pad);
+  border: 1px solid var(--wf-fig-border);
+  border-radius: var(--wf-fig-radius);
+  background: var(--wf-fig-bg);
+  box-sizing: border-box;
+  overflow-x: auto;
+}
+.wf-figure figcaption {
+  margin-top: 8px;
+  color: var(--wf-muted);
+  font-size: 11px;
+  line-height: 1.3;
+  text-align: center;
+  letter-spacing: .02em;
+}
+@media (max-width: 640px) {
+  .wf-figure { padding: var(--wf-fig-pad-sm); margin: var(--wf-fig-margin-sm); }
+}
+
+/* ── the svg itself ───────────────────────────────────────────── */
+.wf {
+  display: block;
+  width: calc(var(--wf-vw, 1250) / var(--wf-ref-width) * 100%);
+  min-width: calc(var(--wf-vw, 1250) * var(--wf-min-scale) * 1px);
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto;
+  overflow: visible;
+  font-family: var(--wf-font);
+}
+/* baseline for any text that forgets a role class (specificity 0) */
+:where(.wf text) { fill: var(--wf-ink); font-size: var(--wf-fs-node); font-weight: var(--wf-fw-strong); }
+
+/* ── type roles ───────────────────────────────────────────────── */
+.wf-eyebrow      { fill: var(--wf-muted); font-size: var(--wf-fs-eyebrow); font-weight: var(--wf-fw-strong); letter-spacing: var(--wf-tracking); }
+.wf-title        { fill: var(--wf-ink);   font-size: var(--wf-fs-title);   font-weight: var(--wf-fw-strong); }
+.wf-sub          { fill: var(--wf-muted); font-size: var(--wf-fs-sub);     font-weight: var(--wf-fw-regular); }
+.wf-node-title   { fill: var(--wf-ink);   font-size: var(--wf-fs-node);    font-weight: var(--wf-fw-strong); }
+.wf-node-title--sm { font-size: var(--wf-fs-node-sm); }
+.wf-node-sub     { fill: var(--wf-muted); font-size: var(--wf-fs-caption); font-weight: var(--wf-fw-regular); }
+.wf-label        { fill: var(--wf-muted); font-size: var(--wf-fs-label);   font-weight: var(--wf-fw-regular); }
+.wf-kpi          { fill: var(--wf-ink);   font-size: var(--wf-fs-kpi);     font-weight: var(--wf-fw-kpi); }
+.wf-tag-text     { fill: var(--wf-accent); font-size: var(--wf-fs-label);  font-weight: var(--wf-fw-tag); }
+.wf-chip-text    { fill: var(--wf-on-dark); font-size: var(--wf-fs-label); font-weight: var(--wf-fw-strong); }
+.wf-strike       { text-decoration: line-through; }
+.wf-on-dark       { fill: var(--wf-on-dark); }
+.wf-on-dark-muted { fill: var(--wf-on-dark-muted); }
+
+/* ── shapes ───────────────────────────────────────────────────── */
+/* .wf-node is a rounded box (radius from token); .wf-chip is the same
+   look for pill shapes whose radius is half their own height.          */
+.wf-node, .wf-chip {
+  fill: var(--wf-surface);
+  stroke: var(--wf-node-stroke);
+  stroke-width: var(--wf-sw-node);
+}
+.wf-node { rx: var(--wf-r-node); }
+.wf-node--accent { stroke: var(--wf-accent-strong); stroke-width: var(--wf-sw-accent); }
+.wf-tag { fill: var(--wf-surface); stroke: var(--wf-accent-soft); stroke-width: var(--wf-sw-node); }
+.wf-chip-dark { fill: var(--wf-dark); }                       /* pill (radius set on the shape) */
+.wf-node-dark { fill: var(--wf-dark); rx: var(--wf-r-node); }  /* box  (radius from token)      */
+.wf-zone {
+  fill: var(--wf-zone-fill);
+  stroke: var(--wf-zone-stroke);
+  stroke-width: var(--wf-sw-zone);
+  stroke-dasharray: 5 5;
+  rx: var(--wf-r-zone);
+}
+.wf-outline { fill: var(--wf-surface); stroke: var(--wf-line); stroke-width: var(--wf-sw-line); }
+.wf-rule { fill: var(--wf-rule); }
+
+/* ── connectors (arrowhead is opt-in via marker-end="url(#wf-arrow)") */
+.wf-connector { fill: none; stroke: var(--wf-line); stroke-width: var(--wf-sw-line); }
+.wf-connector--soft { stroke: var(--wf-line-soft); stroke-dasharray: 5 5; }
+
+/* ── chart data (line + milestones) ───────────────────────────── */
+.wf-data-line { fill: none; stroke: var(--wf-accent); stroke-width: var(--wf-sw-data); stroke-linecap: round; stroke-linejoin: round; }
+.wf-data-point { fill: var(--wf-surface); stroke: var(--wf-accent); stroke-width: var(--wf-sw-point); }
+.wf-data-point--end { fill: var(--wf-accent); }
+
+/* ── travelling dot (motion itself is <animateMotion> in the markup) */
+.wf-dot { fill: var(--wf-accent); stroke: var(--wf-dot-stroke); stroke-width: var(--wf-sw-dot); r: var(--wf-dot-r); }
+@media (prefers-reduced-motion: reduce) { .wf-dot { display: none; } }
+

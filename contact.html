@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact | Jyoti Sajwan</title>
+  <meta name="description" content="Get in touch with Jyoti Sajwan, Associate Product Manager. Email, phone, and LinkedIn." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Lora:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <script src="assets/svg-sprite.js"></script>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-1e23f2d197a8" /></svg>
+        Jyoti Sajwan
+      </a>
+      <div class="nav-links">
+        <div class="nav-desktop-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link" style="color:var(--black);font-weight:700">Contact</a>
+        </div>
+        <a href="contact.html" class="nav-cta">Get in touch</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html"   class="mob-link" onclick="closeNav()">Home</a>
+      <a href="about.html"   class="mob-link" onclick="closeNav()">About</a>
+      <a href="contact.html" class="mob-link" onclick="closeNav()">Contact</a>
+      <a href="contact.html" class="mob-link mob-cta" onclick="closeNav()">Get in touch</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ══════════════════════════════════
+         CONTACT
+    ════════════════════════════════════ -->
+    <section class="contact-section">
+      <div class="container">
+
+        <div class="contact-head">
+          <p class="eyebrow">Contact</p>
+          <h1 class="contact-title">Let's build something.<span class="dot">.</span></h1>
+          <p class="contact-sub">
+            Open to conversations about AI products, search, and meaningful PM roles 
+            or just to swap notes. Reach me on any of these.
+          </p>
+        </div>
+
+        <div class="contact-layout">
+
+          <!-- Contact cards -->
+          <div class="contact-cards">
+
+            <!-- Email -->
+            <a href="mailto:jyotisajwan30@gmail.com" class="contact-card">
+              <span class="cc-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-842c380033fa" /></svg>
+              </span>
+              <span class="cc-text">
+                <span class="cc-label">Email</span>
+                <span class="cc-value">jyotisajwan30@gmail.com</span>
+              </span>
+              <svg class="cc-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-098c7f1556f0" /></svg>
+            </a>
+
+            <!-- Phone -->
+            <a href="tel:+918699386744" class="contact-card">
+              <span class="cc-icon">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-f86a80f3b660" /></svg>
+              </span>
+              <span class="cc-text">
+                <span class="cc-label">Phone</span>
+                <span class="cc-value">+91 86993 86744</span>
+              </span>
+              <svg class="cc-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-098c7f1556f0" /></svg>
+            </a>
+
+            <!-- LinkedIn -->
+            <a href="https://linkedin.com/in/jyotisajwan" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <span class="cc-icon">
+                <svg width="20" height="20" fill="currentColor"><use href="#icon-87a5739f1080" /></svg>
+              </span>
+              <span class="cc-text">
+                <span class="cc-label">LinkedIn</span>
+                <span class="cc-value">linkedin.com/in/jyotisajwan</span>
+              </span>
+              <svg class="cc-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-098c7f1556f0" /></svg>
+            </a>
+
+            <!-- GitHub, placeholder, add link later.
+                 When ready, set href and uncomment to show it.
+            <a href="https://github.com/YOUR-USERNAME" target="_blank" rel="noopener noreferrer" class="contact-card">
+              <span class="cc-icon">
+                <svg width="20" height="20" fill="currentColor"><use href="#icon-0c40d63ceae4" /></svg>
+              </span>
+              <span class="cc-text">
+                <span class="cc-label">GitHub</span>
+                <span class="cc-value">github.com/YOUR-USERNAME</span>
+              </span>
+              <svg class="cc-arrow" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-098c7f1556f0" /></svg>
+            </a>
+            -->
+
+          </div>
+
+          <!-- Message form (opens the visitor's email app, pre-filled) -->
+          <form class="contact-form" id="contactForm" onsubmit="return sendMessage(event)">
+            <p class="form-label">Send a message</p>
+
+            <div class="field">
+              <label for="cf-name">Name</label>
+              <input type="text" id="cf-name" name="name" placeholder="Your name" required />
+            </div>
+
+            <div class="field">
+              <label for="cf-email">Your email</label>
+              <input type="email" id="cf-email" name="email" placeholder="you@example.com" required />
+            </div>
+
+            <div class="field">
+              <label for="cf-message">Message</label>
+              <textarea id="cf-message" name="message" rows="5" placeholder="What's on your mind?" required></textarea>
+            </div>
+
+            <button type="submit" class="btn-primary form-submit">
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-a8f3ef72290c" /></svg>
+              Send message
+            </button>
+            <p class="form-note" id="formNote">This opens your email app with the message ready to send.</p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span class="footer-name">Jyoti Sajwan</span>
+      <span class="footer-copy">&copy; 2026 · Associate Product Manager</span>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Work</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="https://linkedin.com/in/jyotisajwan" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script>
+    // Build a mailto link from the form and open the visitor's email client.
+    function sendMessage(e) {
+      e.preventDefault();
+      var name = document.getElementById('cf-name').value.trim();
+      var email = document.getElementById('cf-email').value.trim();
+      var message = document.getElementById('cf-message').value.trim();
+      var subject = encodeURIComponent('Portfolio message from ' + (name || 'someone'));
+      var body = encodeURIComponent(
+        message + '\n\n---\n' + name + (email ? ' (' + email + ')' : '')
+      );
+      window.location.href = 'mailto:jyotisajwan30@gmail.com?subject=' + subject + '&body=' + body;
+      var note = document.getElementById('formNote');
+      if (note) note.textContent = 'Opening your email app… if nothing happens, email jyotisajwan30@gmail.com directly.';
+      return false;
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bookshelf | Jyoti Sajwan</title>
+  <meta name="description" content="Books Jyoti Sajwan has read, crime, fiction and big ideas. Tap any cover to find it on Amazon." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Lora:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="about2.css" />
+</head>
+<body>
+  <script src="assets/svg-sprite.js"></script>
+
+  <!-- NAV -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-1e23f2d197a8" /></svg>
+        Jyoti Sajwan
+      </a>
+      <div class="nav-links">
+        <div class="nav-desktop-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <a href="contact.html" class="nav-cta">Get in touch</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html"   class="mob-link" onclick="closeNav()">Home</a>
+      <a href="about.html"   class="mob-link" onclick="closeNav()">About</a>
+      <a href="contact.html" class="mob-link" onclick="closeNav()">Contact</a>
+      <a href="contact.html" class="mob-link mob-cta" onclick="closeNav()">Get in touch</a>
+    </div>
+  </nav>
+
+  <main class="books-page">
+    <section class="books-section">
+      <div class="container">
+        <a href="about.html" class="books-back">
+          <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-888b43de9959" /></svg>
+          Back to About
+        </a>
+
+        <div class="books-head">
+          <p class="books-eyebrow">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-522d6da4117e" /></svg>
+            Bookshelf
+          </p>
+          <h1 class="books-title">Books I've read</h1>
+          <p class="books-sub">My shelf. Tap any cover to find the book on Amazon.</p>
+          <p class="books-count" id="booksCount"></p>
+        </div>
+
+        <div class="book-chips" id="bookChips"></div>
+        <div class="books-grid" id="booksGrid"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span class="footer-name">Jyoti Sajwan</span>
+      <span class="footer-copy">&copy; 2026 · Associate Product Manager</span>
+      <div class="footer-links">
+        <a href="index.html" class="footer-link">Work</a>
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+  <script src="books.js"></script>
+</body>
+</html>

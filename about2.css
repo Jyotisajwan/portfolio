@@ -1,0 +1,676 @@
+/* =========================================
+   About Page v2, about2.css
+   Inspired by ankit-nandwani.com/about
+   ========================================= */
+
+/* ── Grid background ── */
+.journey-section {
+  position: relative;
+  padding: 80px 24px 96px;
+  overflow: hidden;
+}
+
+.grid-bg {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(#e5e5e5 1px, transparent 1px),
+    linear-gradient(90deg, #e5e5e5 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to bottom, transparent, black 10%, black 90%, transparent);
+  opacity: 0.65;
+  pointer-events: none;
+}
+
+.journey-inner {
+  position: relative;
+  max-width: 1040px;
+  margin: 0 auto;
+}
+
+.journey-eyebrow {
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  margin-bottom: 20px;
+}
+
+.journey-headline {
+  font-size: clamp(32px, 5vw, 54px);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  color: var(--black);
+  line-height: 1.05;
+  margin-bottom: 72px;
+}
+
+/* ── Timeline container ── */
+.timeline {
+  position: relative;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* Vertical centre line */
+.tl-line {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  height: 100%;
+  width: 2px;
+  background: var(--border);
+}
+
+@media (min-width: 768px) {
+  .tl-line { left: 50%; transform: translateX(-50%); }
+}
+
+.tl-line-fill {
+  height: 0%;
+  width: 100%;
+  background: var(--black);
+  transform-origin: top;
+  transition: height 0.1s linear;
+}
+
+/* Plane / marker at top */
+.tl-plane {
+  position: absolute;
+  top: -14px;
+  left: 15px;
+  transform: translateX(-50%) rotate(135deg);
+  z-index: 10;
+}
+@media (min-width: 768px) {
+  .tl-plane { left: 50%; }
+}
+
+/* ── Timeline items ── */
+.tl-item {
+  position: relative;
+  padding-left: 48px;
+  padding-bottom: 72px;
+}
+.tl-item:last-child { padding-bottom: 24px; }
+
+@media (min-width: 768px) {
+  .tl-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 80px;
+    padding-left: 0;
+    padding-bottom: 80px;
+    align-items: start;
+  }
+}
+
+/* Dot on the line */
+.tl-dot {
+  position: absolute;
+  top: 28px;
+  left: 15px;
+  transform: translateX(-50%) scale(0);
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--black);
+  box-shadow: 0 0 0 6px #fafafa;
+  z-index: 5;
+  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.tl-dot.visible { transform: translateX(-50%) scale(1); }
+.tl-dot-active { background: var(--accent); box-shadow: 0 0 0 6px rgba(27,58,92,0.1); }
+
+@media (min-width: 768px) {
+  .tl-dot { left: 50%; }
+}
+
+/* Ghost year number */
+.tl-year {
+  display: none;
+  font-size: 96px;
+  font-weight: 700;
+  letter-spacing: -0.05em;
+  line-height: 1;
+  color: transparent;
+  -webkit-text-stroke: 1.5px #d2d2d7;
+  opacity: 0;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  padding-top: 8px;
+  pointer-events: none;
+  user-select: none;
+}
+.tl-year.visible { opacity: 1; }
+
+@media (min-width: 768px) {
+  .tl-year { display: block; }
+}
+
+/* Left item: card col-1, year col-2 */
+.tl-left .tl-card  { grid-column: 1; grid-row: 1; }
+.tl-left .tl-year  { grid-column: 2; grid-row: 1; transform: translateX(40px); }
+.tl-left .tl-year.visible { transform: translateX(0); }
+.tl-year-right { text-align: left; }
+
+/* Right item: year col-1, card col-2 */
+.tl-right .tl-card { grid-column: 2; grid-row: 1; }
+.tl-right .tl-year { grid-column: 1; grid-row: 1; text-align: right; transform: translateX(-40px); }
+.tl-right .tl-year.visible { transform: translateX(0); }
+.tl-year-left { text-align: right; }
+
+/* ── Cards ── */
+.tl-card {
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 24px 28px;
+  opacity: 0;
+  transform: perspective(1200px) translateY(80px) scale(0.93) rotateX(24deg) rotateZ(-4deg);
+  transition: opacity 0.6s ease, transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              border-color 150ms, box-shadow 200ms;
+}
+.tl-card-right {
+  transform: perspective(1200px) translateY(80px) scale(0.93) rotateX(24deg) rotateZ(4deg);
+}
+.tl-card.visible {
+  opacity: 1;
+  transform: perspective(1200px) translateY(0) scale(1) rotateX(0deg) rotateZ(0deg);
+}
+.tl-card:hover {
+  border-color: #c0c0c5;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.09);
+}
+.tl-card-current {
+  border-color: rgba(27,58,92,0.25);
+  box-shadow: 0 0 0 1px rgba(27,58,92,0.08);
+}
+.tl-card-current:hover {
+  border-color: rgba(27,58,92,0.5);
+  box-shadow: 0 8px 32px rgba(27,58,92,0.12);
+}
+
+/* Card header row */
+.tl-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+/* Badge */
+.tl-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  border: 1px solid rgba(27,58,92,0.3);
+  border-radius: 100px;
+  padding: 4px 11px;
+  white-space: nowrap;
+}
+.tl-badge-promoted {
+  color: var(--accent);
+}
+
+/* Date */
+.tl-date {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--muted);
+  margin-bottom: 4px;
+}
+
+/* Role */
+.tl-role {
+  font-size: clamp(20px, 2.5vw, 26px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--black);
+  line-height: 1.15;
+  margin-bottom: 20px;
+}
+.tl-company {
+  font-weight: 500;
+  color: var(--muted);
+}
+
+/* DL rows */
+.tl-dl {
+  border-top: 1px solid var(--border);
+  font-size: 15px;
+  line-height: 1.6;
+}
+.tl-dl-row {
+  display: grid;
+  grid-template-columns: 68px 1fr;
+  gap: 12px;
+  padding: 12px 0;
+  border-bottom: 1px solid var(--border);
+}
+.tl-dl-last { border-bottom: none; }
+
+.tl-dl-row dt {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  padding-top: 3px;
+}
+.tl-dl-row dd {
+  color: var(--black);
+  line-height: 1.6;
+}
+.tl-impact {
+  font-weight: 600 !important;
+}
+.tl-impact strong {
+  color: var(--black);
+}
+
+/* ── Contact strip ── */
+.contact-strip {
+  border-top: 2px solid var(--black);
+}
+
+.contact-inner {
+  max-width: 1040px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  padding: 0 24px;
+}
+
+.contact-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 32px 16px;
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--muted);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: color 150ms;
+}
+.contact-item:hover { color: var(--black); }
+.contact-item:hover .contact-icon-wrap {
+  border-color: var(--black);
+  transform: translateY(-4px);
+}
+
+.contact-icon-wrap {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 1px solid var(--border);
+  background: var(--white);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--black);
+  transition: border-color 150ms, transform 200ms;
+}
+
+/* ═══════════════════════════════════════
+   ABOUT GRID, journey (left) + photos (right)
+═══════════════════════════════════════ */
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: 64px;
+  align-items: start;
+}
+
+.about-journey { min-width: 0; }
+
+/* Single static photo (no rotation) */
+.photo-stack.single { cursor: default; }
+.photo-stack.single .photo-card.active { transform: translateY(0) scale(1); }
+.photo-stack.single:hover .photo-card.active { transform: translateY(0) scale(1); }
+.photo-stack.single:hover .photo-card.active .photo-img-wrap img { transform: none; }
+
+.about-media { position: relative; }
+
+/* ═══════════════════════════════════════
+   ABOUT HERO
+═══════════════════════════════════════ */
+.about-hero { position: relative; padding: 108px 0 64px; overflow: hidden; }
+.about-hero .grid-bg { display: none; }
+.about-hero .about-grid { align-items: center; }
+.about-h1 {
+  font-size: clamp(40px, 6vw, 72px);
+  font-weight: 800; letter-spacing: -.045em; line-height: .98;
+  color: var(--black); margin: 12px 0 18px;
+}
+.about-lead { font-size: 19px; font-weight: 500; color: var(--black); line-height: 1.45; letter-spacing: -.01em; margin-bottom: 14px; }
+.about-text { font-size: 15px; color: #444; line-height: 1.75; max-width: 520px; margin-bottom: 26px; }
+.about-intro .hero-ctas { display: flex; gap: 12px; flex-wrap: wrap; }
+
+/* ═══════════════════════════════════════
+   BENTO, journey + bookshelf cards
+═══════════════════════════════════════ */
+.bento-section {
+  position: relative;
+  padding: 56px 0 104px;
+  background: var(--off);
+  border-top: 1px solid var(--border);
+  overflow: hidden;
+}
+.bento-section .container { position: relative; z-index: 1; }
+
+.bento-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+
+.bento-card {
+  position: relative;
+  background: var(--white);
+  border: 1px solid var(--border);
+  border-radius: var(--r-lg);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  transition: border-color var(--ease), box-shadow 220ms, transform 160ms;
+}
+.bento-card:hover { border-color: #c0c0c5; box-shadow: 0 12px 34px rgba(0,0,0,.09); transform: translateY(-3px); }
+
+/* Illustration zone (top of card) */
+.bento-illus {
+  position: relative;
+  height: 172px;
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.journey-illus { background: linear-gradient(180deg, #eef2ff 0%, #f7f8fc 100%); }
+.journey-illus svg { width: 100%; height: 100%; display: block; }
+.books-illus { background: linear-gradient(180deg, #fdeef1 0%, #f7f8fc 100%); }
+
+/* Fan of real covers */
+.cover-fan { position: relative; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; }
+.cover-fan img {
+  position: absolute;
+  width: 74px; height: 111px; object-fit: cover;
+  border-radius: 6px;
+  box-shadow: 0 6px 16px rgba(0,0,0,.18);
+  border: 2px solid #fff;
+  transform: translateX(calc(var(--i) * 46px)) translateY(calc(var(--i) * var(--i) * 4px)) rotate(calc(var(--i) * 7deg));
+  transition: transform .4s cubic-bezier(.34,1.56,.64,1);
+}
+.bento-card:hover .cover-fan img {
+  transform: translateX(calc(var(--i) * 54px)) translateY(calc(var(--i) * var(--i) * 3px)) rotate(calc(var(--i) * 9deg));
+}
+
+.bento-body { padding: 22px 26px 26px; display: flex; flex-direction: column; flex: 1; }
+.bento-eyebrow { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--muted); margin-bottom: 8px; }
+.bento-title { font-size: 22px; font-weight: 800; letter-spacing: -.03em; color: var(--black); margin-bottom: 8px; }
+.bento-sub { font-size: 14px; color: #555; line-height: 1.6; margin-bottom: 20px; }
+.bento-btn {
+  margin-top: auto; align-self: flex-start;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 10px 18px;
+  background: var(--black); color: #fff;
+  font-size: 13.5px; font-weight: 600;
+  border: none; border-radius: 100px; cursor: pointer;
+  transition: background var(--ease), transform 100ms;
+}
+.bento-btn:hover { background: var(--accent); transform: translateY(-1px); }
+.bento-chevron { transition: transform .25s ease; }
+.bento-btn.is-open .bento-chevron { transform: rotate(180deg); }
+
+/* Reveal panels */
+.reveal-panel { display: none; margin-top: 28px; }
+.reveal-panel.open { display: block; animation: fadeUp .45s ease; }
+
+/* Flat (single-sided) timeline inside the journey panel */
+.reveal-panel .timeline { max-width: 680px; }
+.tl-flat .tl-item { display: block; grid-template-columns: none; padding-left: 48px; padding-bottom: 56px; }
+.tl-flat .tl-item:last-child { padding-bottom: 0; }
+.tl-flat .tl-line,
+.tl-flat .tl-plane { left: 15px; transform: translateX(-50%); }
+.tl-flat .tl-plane { transform: translateX(-50%) rotate(135deg); }
+.tl-flat .tl-dot { left: 15px; }
+.tl-flat .tl-dot.visible { transform: translateX(-50%) scale(1); }
+.tl-flat .tl-year { display: none; }
+.tl-flat .tl-card { grid-column: auto; }
+
+/* Stack hero on top of each other below the breakpoint */
+@media (max-width: 900px) {
+  .about-grid { grid-template-columns: 1fr; gap: 32px; }
+  .about-hero .about-media { display: flex; justify-content: flex-start; }
+  .about-hero { padding-top: 96px; }
+}
+
+@media (max-width: 720px) {
+  .bento-grid { grid-template-columns: 1fr; }
+}
+
+/* ── Responsive ── */
+@media (max-width: 767px) {
+  .tl-card { padding: 18px 20px; }
+  .tl-role { font-size: 20px; }
+}
+
+/* ═══════════════════════════════════════
+   MEMOJI TOGGLE (on the About photo)
+═══════════════════════════════════════ */
+/* Illustration sits on top of the photo and cross-fades in, same framing,
+   so toggling looks like the photo turning into art, not a hard cut. */
+.pc-memoji {
+  position: absolute; inset: 0;
+  opacity: 0; pointer-events: none;
+  transition: opacity .55s ease;
+  z-index: 3;
+}
+.pc-memoji img.memoji-png, .pc-memoji svg {
+  width: 100%; height: 100%; display: block;
+  object-fit: cover; object-position: center;
+}
+.photo-card.memoji-on .pc-memoji { opacity: 1; }
+
+/* ═══════════════════════════════════════
+   SIRI-STYLE PHOTO TRANSFORM
+═══════════════════════════════════════ */
+.siri-host { position: relative; }
+
+/* Elegant light tracing the photo's rounded-rect border (always on, subtle) */
+@property --trace-ang { syntax: '<angle>'; initial-value: 0deg; inherits: false; }
+.frame-trace {
+  position: absolute; inset: 0;
+  border-radius: 20px;
+  padding: 2px;
+  background: conic-gradient(from var(--trace-ang),
+    transparent 0 78%,
+    rgba(255,255,255,.95) 90%,
+    rgba(190,214,255,.45) 96%,
+    transparent 100%);
+  -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+  -webkit-mask-composite: xor;
+          mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
+          mask-composite: exclude;
+  animation: frameTrace 4.5s linear infinite;
+  pointer-events: none; z-index: 13;
+}
+@keyframes frameTrace { to { --trace-ang: 360deg; } }
+
+/* Siri control bar overlaid on the photo bottom, this IS the trigger */
+.siri-bar {
+  position: absolute; left: 10px; right: 10px; bottom: 10px; z-index: 12;
+  display: flex; align-items: center; gap: 9px;
+  padding: 6px 6px 6px 8px;
+  background: rgba(16,16,20,.62);
+  -webkit-backdrop-filter: blur(10px); backdrop-filter: blur(10px);
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 100px;
+  cursor: pointer; text-align: left; font: inherit;
+  transition: background .2s ease, border-color .2s ease, transform .12s ease;
+}
+.siri-bar:hover { background: rgba(16,16,20,.76); border-color: rgba(255,255,255,.32); }
+.siri-bar:active { transform: scale(.99); }
+.siri-bar:focus-visible { outline: none; box-shadow: 0 0 0 3px rgba(61,107,255,.5); }
+.siri-orb-wrap { flex-shrink: 0; display: flex; }
+.siri-bar .siri-orb { width: 24px; height: 24px; filter: drop-shadow(0 0 5px rgba(120,120,255,.5)); }
+.siri-bar.thinking .siri-orb { animation: siriPulse .9s ease-in-out infinite; }
+.siri-field { flex: 1; min-width: 0; display: flex; align-items: center; font-size: 12.5px; font-weight: 500; color: #fff; white-space: nowrap; overflow: hidden; }
+.siri-text { overflow: hidden; text-overflow: ellipsis; }
+.siri-caret { width: 2px; height: 14px; margin-left: 1px; background: #fff; border-radius: 1px; flex-shrink: 0; display: none; animation: siriCaret 1s step-end infinite; }
+.siri-bar.typing .siri-caret { display: inline-block; }
+@keyframes siriCaret { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+.siri-send { flex-shrink: 0; width: 28px; height: 28px; border-radius: 50%; display: flex; align-items: center; justify-content: center; background: linear-gradient(135deg, #3d6bff, #37c8ff); color: #fff; }
+.siri-send svg { width: 15px; height: 15px; }
+
+/* Bento button as a link (books → page) + back link */
+.bento-btn { text-decoration: none; }
+.bento-arrow { transition: transform .2s ease; }
+.bento-card:hover .bento-arrow { transform: translateX(3px); }
+.books-back {
+  display: inline-flex; align-items: center; gap: 7px;
+  font-size: 13px; font-weight: 600; color: var(--muted);
+  text-decoration: none; margin-bottom: 22px;
+  transition: color 150ms, transform 120ms;
+}
+.books-back:hover { color: var(--black); transform: translateX(-2px); }
+
+/* Siri button */
+.siri-button {
+  margin-top: 16px;
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 6px 18px 6px 6px;
+  background: #101014; color: #fff;
+  border: none; border-radius: 100px; cursor: pointer;
+  font-size: 13.5px; font-weight: 600;
+  box-shadow: 0 4px 16px rgba(0,0,0,.18);
+  transition: transform 120ms, box-shadow 160ms;
+}
+.siri-button:hover { transform: translateY(-1px); box-shadow: 0 8px 22px rgba(0,0,0,.24); }
+.siri-button:disabled { cursor: default; }
+.siri-orb { width: 30px; height: 30px; flex-shrink: 0; filter: drop-shadow(0 0 6px rgba(120,120,255,.45)); }
+.siri-ribbons { animation: siriWarp 3.6s ease-in-out infinite; transform-origin: 50% 50%; transform-box: fill-box; }
+@keyframes siriWarp {
+  0%,100% { transform: rotate(0) scale(1); }
+  33%     { transform: rotate(120deg) scale(1.06); }
+  66%     { transform: rotate(240deg) scale(.95); }
+}
+.siri-button.thinking .siri-orb { animation: siriPulse .9s ease-in-out infinite; }
+@keyframes siriPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.14); } }
+
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+@media (prefers-reduced-motion: reduce) {
+  .frame-trace, .siri-ribbons, .siri-caret { animation: none; }
+}
+
+/* ═══════════════════════════════════════
+   PENGUIN ILLUSTRATIONS (bento cards)
+═══════════════════════════════════════ */
+.peng-svg { width: 100%; height: 100%; display: block; }
+
+/* Climbing penguin waddle (rotates around its feet) */
+.peng-wad { transform-box: fill-box; transform-origin: center bottom; animation: pengWaddle .5s ease-in-out infinite; }
+@keyframes pengWaddle { 0%,100% { transform: rotate(-7deg); } 50% { transform: rotate(7deg); } }
+
+/* Reading penguin gentle breathing bob */
+.peng-bob { transform-box: fill-box; transform-origin: center; animation: pengBob 2.6s ease-in-out infinite; }
+@keyframes pengBob { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+
+/* Read → sleep → read cycle (8s loop) */
+.eyes-open  { animation: eyesWake 8s infinite; }
+@keyframes eyesWake  { 0%,42%,92%,100% { opacity: 1; } 50%,84% { opacity: 0; } }
+.eyes-closed { opacity: 0; animation: eyesSleep 8s infinite; }
+@keyframes eyesSleep { 0%,42%,92%,100% { opacity: 0; } 50%,84% { opacity: 1; } }
+.peng-tilt { transform-box: fill-box; transform-origin: center bottom; animation: pengTilt 8s ease-in-out infinite; }
+@keyframes pengTilt { 0%,40% { transform: rotate(0); } 55%,82% { transform: rotate(8deg); } 94%,100% { transform: rotate(0); } }
+.zzz { opacity: 0; transform-box: fill-box; transform-origin: left bottom; animation: zzzFloat 8s ease-in-out infinite; }
+@keyframes zzzFloat {
+  0%,46%   { opacity: 0; transform: translateY(4px); }
+  56%      { opacity: .9; transform: translateY(0); }
+  80%      { opacity: .5; transform: translateY(-12px); }
+  86%,100% { opacity: 0; transform: translateY(-14px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .peng-wad, .peng-bob, .peng-tilt, .eyes-open, .eyes-closed, .zzz { animation: none; }
+  .eyes-closed { opacity: 0; }
+}
+
+/* Illustration (real artwork) on bento cards */
+.bento-illus.has-img { height: 200px; background: #f6efe6; }
+.peng-img {
+  width: 100%; height: 100%;
+  object-fit: contain; display: block;
+  animation: pengFloat 4.5s ease-in-out infinite;
+}
+@keyframes pengFloat { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+@media (prefers-reduced-motion: reduce) { .peng-img { animation: none; } }
+
+/* ═══════════════════════════════════════
+   ANIMATED BENTO SCENES
+═══════════════════════════════════════ */
+.bento-illus.scene { height: 228px; overflow: hidden; }
+.journey-scene { background: #fffaf5; }
+.journey-scene img { display:block; width:100%; height:100%; object-fit:cover; object-position:center 52%; }
+@keyframes chibiJourneyDrift { from { transform:scale(1) translateY(2px); } to { transform:scale(1.035) translateY(-3px); } }
+.book-scene { background: #fff7f1; }
+.book-scene img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 50%; }
+@keyframes chibiReadingFloat { 0%,100% { transform:translateY(0); } 50% { transform:translateY(-4px); } }
+
+.scene-svg { width: 100%; height: 100%; display: block; }
+
+/* ── Journey: climbing penguin ── */
+.j-sun { transform-box: fill-box; transform-origin: center; animation: jSun 4s ease-in-out infinite; }
+@keyframes jSun { 0%,100% { transform: scale(1); opacity: 1; } 50% { transform: scale(1.07); opacity: .9; } }
+.j-cloud1 { animation: jCloud1 30s linear infinite; }
+@keyframes jCloud1 { 0% { transform: translate(-50px,40px); } 100% { transform: translate(410px,40px); } }
+.j-cloud2 { animation: jCloud2 40s linear infinite; }
+@keyframes jCloud2 { 0% { transform: translate(-40px,78px); } 100% { transform: translate(410px,78px); } }
+.climber { animation: climberFade 9s linear infinite; }
+@keyframes climberFade { 0% { opacity: 0; } 7% { opacity: 1; } 88% { opacity: 1; } 100% { opacity: 0; } }
+.climb-wad { transform-box: fill-box; transform-origin: center bottom; animation: climbWaddle .5s ease-in-out infinite; }
+@keyframes climbWaddle { 0%,100% { transform: rotate(-6deg); } 50% { transform: rotate(6deg); } }
+
+/* ── Bookshelf: read → sleep → wake ── */
+.read-breathe { transform-box: fill-box; transform-origin: center; animation: rBreathe 3s ease-in-out infinite; }
+@keyframes rBreathe { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-4px); } }
+.read-tilt { transform-box: fill-box; transform-origin: center bottom; animation: rTilt 14s ease-in-out infinite; }
+@keyframes rTilt { 0%,46% { transform: rotate(0); } 58%,82% { transform: rotate(8deg); } 92%,100% { transform: rotate(0); } }
+.foot { transform-box: fill-box; transform-origin: top center; }
+.footL { animation: footSwing 1.2s ease-in-out infinite; }
+.footR { animation: footSwing 1.2s ease-in-out infinite .6s; }
+@keyframes footSwing { 0%,100% { transform: rotate(-9deg); } 50% { transform: rotate(9deg); } }
+.r-eyes-open { animation: rEyesOpen 14s infinite; }
+@keyframes rEyesOpen { 0%,45%,89%,100% { opacity: 1; } 55%,84% { opacity: 0; } }
+.r-eyes-blink { transform-box: fill-box; transform-origin: center; animation: rBlink 14s infinite; }
+@keyframes rBlink { 0%,14%,16.5%,30%,32.5%,45% { transform: scaleY(1); } 15.2%,31.2% { transform: scaleY(.1); } }
+.r-eyes-closed { opacity: 0; animation: rEyesClosed 14s infinite; }
+@keyframes rEyesClosed { 0%,47%,88%,100% { opacity: 0; } 56%,84% { opacity: 1; } }
+.book-open { animation: bookOpenVis 14s infinite; }
+@keyframes bookOpenVis { 0%,47%,89%,100% { opacity: 1; } 56%,84% { opacity: 0; } }
+.book-closed { opacity: 0; animation: bookClosedVis 14s infinite; }
+@keyframes bookClosedVis { 0%,48%,88%,100% { opacity: 0; } 57%,83% { opacity: 1; } }
+.page-turn { transform-box: fill-box; transform-origin: left center; opacity: 0; animation: pageTurn 14s ease-in-out infinite; }
+@keyframes pageTurn {
+  0%,20% { opacity: 0; transform: scaleX(1); }
+  21%    { opacity: .95; transform: scaleX(1); }
+  33%    { opacity: .95; transform: scaleX(-1); }
+  35%    { opacity: 0; transform: scaleX(-1); }
+  36%,100% { opacity: 0; transform: scaleX(1); }
+}
+.zzz2 { opacity: 0; transform-box: fill-box; transform-origin: left bottom; animation: zzz2Float 14s ease-in-out infinite; }
+@keyframes zzz2Float { 0%,55% { opacity: 0; transform: translateY(6px); } 64% { opacity: .9; transform: translateY(0); } 80% { opacity: .5; transform: translateY(-16px); } 86%,100% { opacity: 0; transform: translateY(-18px); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .j-sun,.j-cloud1,.j-cloud2,.climber,.climb-wad,
+  .read-breathe,.read-tilt,.foot,.r-eyes-open,.r-eyes-blink,.r-eyes-closed,
+  .book-open,.book-closed,.page-turn,.zzz2 { animation: none; }
+  .r-eyes-closed,.book-closed,.zzz2 { opacity: 0; }
+  .climber { opacity: 1; }
+}

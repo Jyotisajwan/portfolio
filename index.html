@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jyoti Sajwan | Product Manager</title>
+  <meta name="description" content="Product professional with 4+ years of experience across AI products, search, automation, B2B SaaS and fintech. Selected work and experience." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400&family=Lora:ital,wght@1,400;1,500;1,600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="workflows.css" />
+</head>
+<body>
+  <script src="assets/svg-sprite.js"></script>
+  <!-- Shared SVG defs for every .wf diagram (styled in workflows.css) -->
+  <svg class="wf-defs" width="0" height="0" aria-hidden="true" focusable="false">
+    <defs>
+      <marker id="wf-arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path class="wf-arrowhead" d="M1 1 L9 5 L1 9"/></marker>
+      <linearGradient id="wf-area" x1="0" y1="0" x2="0" y2="1"><stop class="wf-area-stop wf-area-stop--top" offset="0"/><stop class="wf-area-stop wf-area-stop--bottom" offset="1"/></linearGradient>
+    </defs>
+  </svg>
+
+  <!-- ═══════════════════════════════
+       NAV
+  ══════════════════════════════════ -->
+  <nav class="nav" id="nav">
+    <div class="nav-inner">
+      <a href="index.html" class="nav-logo">
+        <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-1e23f2d197a8" /></svg>
+        Jyoti Sajwan
+      </a>
+      <div class="nav-links">
+        <div class="nav-desktop-links">
+          <a href="index.html" class="nav-link" style="color:var(--black);font-weight:700">Home</a>
+          <a href="about.html" class="nav-link">About</a>
+          <a href="contact.html" class="nav-link">Contact</a>
+        </div>
+        <a href="contact.html" class="nav-cta">Get in touch</a>
+      </div>
+      <button class="hamburger" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="mobile-nav" id="mobileNav">
+      <a href="index.html"   class="mob-link" onclick="closeNav()">Home</a>
+      <a href="about.html"   class="mob-link" onclick="closeNav()">About</a>
+      <a href="contact.html" class="mob-link" onclick="closeNav()">Contact</a>
+      <a href="contact.html" class="mob-link mob-cta" onclick="closeNav()">Get in touch</a>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- ═══════════════════════════════
+         HERO, WORK INTRO
+    ══════════════════════════════════ -->
+    <section class="hero hero-work" id="top">
+      <div class="container">
+
+        <div class="hero-work-head">
+          <p class="eyebrow">Product Specialist · AI · Search · B2B SaaS</p>
+          <h1 class="hero-name">Jyoti Sajwan</h1>
+
+          <div class="hero-rule"></div>
+
+          <p class="hero-lead">
+            I build <em>AI products people actually love</em>, with a focus on search, automation, and 0-to-1.
+          </p>
+          <p class="hero-bio">
+            4+ years shipping AI search and automation products across B2B SaaS and fintech.
+            Here is a closer look at the problems, product decisions and outcomes behind my work.
+          </p>
+
+          <div class="hero-ctas">
+            <a href="about.html" class="btn-primary">
+              My journey
+              <svg width="15" height="15" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+            </a>
+            <a href="contact.html" class="btn-ghost">Contact me</a>
+          </div>
+        </div>
+
+        <!-- Impact strip -->
+        <div class="impact-strip">
+          <div class="impact-item">
+            <span class="imp-num">97%</span>
+            <span class="imp-lbl">AI cost reduction</span>
+          </div>
+          <div class="impact-div"></div>
+          <div class="impact-item">
+            <span class="imp-num">10%→&lt;1%</span>
+            <span class="imp-lbl">Failed search rate</span>
+          </div>
+          <div class="impact-div"></div>
+          <div class="impact-item">
+            <span class="imp-num">20M+</span>
+            <span class="imp-lbl">Slides indexed</span>
+          </div>
+          <div class="impact-div"></div>
+          <div class="impact-item">
+            <span class="imp-num">20K+</span>
+            <span class="imp-lbl">Users reached</span>
+          </div>
+          <div class="impact-div"></div>
+          <div class="impact-item">
+            <span class="imp-num">20+</span>
+            <span class="imp-lbl">Payroll systems</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ═══════════════════════════════
+         WORK EXPERIENCE
+    ══════════════════════════════════ -->
+    <section class="work-section" id="work">
+      <div class="container">
+        <p class="section-label">Work Experience</p>
+
+        <!-- Experience cards row -->
+        <div class="exp-cards-row">
+
+          <!-- ── PREZENT.AI ── -->
+          <div class="exp-col">
+            <div class="exp-card-head prezent-head">
+              <a class="exp-card-icon prezent-icon company-logo-link" href="https://www.prezent.ai/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                <img class="company-logo" src="assets/logos/prezent.svg" alt="" width="42" height="42" loading="lazy">
+              </a>
+              <div>
+                <p class="exp-card-type">AI · Search · Platform</p>
+                <h3 class="exp-card-company"><a class="company-site-link" href="https://www.prezent.ai/" target="_blank" rel="noopener noreferrer" aria-label="Visit Prezent.ai website">Prezent.ai</a></h3>
+                <p class="exp-card-sub">Scaling AI products for Fortune 500 teams.</p>
+              </div>
+            </div>
+            <ul class="exp-links-list">
+              <li>
+                <button class="exp-link-btn" onclick="openPanel('lightning')" aria-expanded="false">
+                  Lightning Studio: 0 to 1
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+                </button>
+              </li>
+              <li>
+                <button class="exp-link-btn" onclick="openPanel('search')" aria-expanded="false">
+                  AI Search & Discovery
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+                </button>
+              </li>
+              <li>
+                <button class="exp-link-btn" onclick="openPanel('astrid')" aria-expanded="false">
+                  Astrid Suggestions & LLM Search
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+                </button>
+              </li>
+              <li>
+                <button class="exp-link-btn" onclick="openPanel('bpgenius')" aria-expanded="false">
+                  BP Genius & Best Practice Library
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+                </button>
+              </li>
+              <li>
+                <button class="exp-link-btn" onclick="openPanel('support-agent')" aria-expanded="false">
+                  Support Knowledge Agent
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ── PUMPER ── -->
+          <div class="exp-col">
+            <div class="exp-card-head pumper-head">
+              <a class="exp-card-icon pumper-icon company-logo-link" href="https://www.pumper.run/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                <img class="company-logo" src="assets/logos/pumper.png" alt="" width="42" height="42" loading="lazy">
+              </a>
+              <div>
+                <p class="exp-card-type">Shopify · Growth · Sole PM</p>
+                <h3 class="exp-card-company"><a class="company-site-link" href="https://www.pumper.run/" target="_blank" rel="noopener noreferrer" aria-label="Visit Pumper website">Pumper</a></h3>
+                <p class="exp-card-sub">Free-to-paid conversion for merchants.</p>
+              </div>
+            </div>
+            <ul class="exp-links-list">
+              <li>
+                <button class="exp-link-btn" onclick="openPanel('shopify')" aria-expanded="false">
+                  Built for Shopify App Launch
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+          <!-- ── TARTANHQ ── -->
+          <div class="exp-col">
+            <div class="exp-card-head tartan-head">
+              <a class="exp-card-icon tartan-icon company-logo-link" href="https://www.tartanhq.com/" target="_blank" rel="noopener noreferrer" tabindex="-1" aria-hidden="true">
+                <img class="company-logo" src="assets/logos/tartanhq.png" alt="" width="42" height="42" loading="lazy">
+              </a>
+              <div>
+                <p class="exp-card-type">Fintech · API · HRMS</p>
+                <h3 class="exp-card-company"><a class="company-site-link" href="https://www.tartanhq.com/" target="_blank" rel="noopener noreferrer" aria-label="Visit TartanHQ website">TartanHQ</a></h3>
+                <p class="exp-card-sub">Payroll data for real-time income verification.</p>
+              </div>
+            </div>
+            <ul class="exp-links-list">
+              <li>
+                <button class="exp-link-btn" onclick="openPanel('hrms')" aria-expanded="false">
+                  HRMS Sync: Payroll API Product
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+                </button>
+              </li>
+              <li>
+                <button class="exp-link-btn" onclick="openPanel('ocr')" aria-expanded="false">
+                  OCR Model & Payslip Extraction
+                  <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-3f2096db27c5" /></svg>
+                </button>
+              </li>
+            </ul>
+          </div>
+
+        </div><!-- /.exp-cards-row -->
+
+        <!-- ═══ INLINE DETAIL PANELS ═══ -->
+
+        <!-- Lightning Studio -->
+        <div class="detail-panel" id="panel-lightning">
+          <button class="panel-close" onclick="closePanel('lightning')" aria-label="Close">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-7aa8e89c5945" /></svg>
+            Close
+          </button>
+          <div class="panel-inner">
+            <div class="panel-meta"><span class="panel-company prezent-text">Prezent.ai</span><span class="panel-dot">·</span><span class="panel-role">Product Specialist / APM L2</span><span class="panel-dot">·</span><span class="panel-date">Jan 2026 – Present</span></div>
+            <h2 class="panel-title">Lightning Studio</h2>
+            <p class="panel-subtitle">Turning a 3–4 day manual brand-template conversion process into a workflow that completes in seconds.</p>
+            <div class="panel-stats"><div class="pstat"><span class="pstat-num">3–4 days → seconds</span><span class="pstat-lbl">Template conversion time</span></div><div class="pstat"><span class="pstat-num">~97%</span><span class="pstat-lbl">AI captioning cost reduction</span></div><div class="pstat"><span class="pstat-num">~58%</span><span class="pstat-lbl">Re-indexing time saved</span></div></div>
+            <figure class="wf-figure">
+    <svg class="wf" viewBox="-65 0 1250 300" style="--wf-vw:1250" role="img" aria-labelledby="wf-lightning-t wf-lightning-d">
+      <title id="wf-lightning-t">Lightning Studio workflow</title><desc id="wf-lightning-d">A horizontal four-step workflow from a new brand template through asset structuring and automated conversion to brand-compliant shells, reducing conversion time from three to four days to seconds.</desc>
+      <text class="wf-eyebrow" x="28" y="30">WORKFLOW</text>
+      <text class="wf-title" x="28" y="60">Lightning Studio</text>
+      <text class="wf-sub" x="28" y="82">Automated brand-template conversion</text>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M150 171 H282"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M490 171 H622"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M830 171 H962"/>
+      <g><rect class="wf-node" x="-50" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="50" y="170" text-anchor="middle">1. New brand template</text><text class="wf-node-sub" x="50" y="190" text-anchor="middle">Client uploads template</text></g>
+      <g><rect class="wf-node" x="290" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="390" y="170" text-anchor="middle">2. Structure</text><text class="wf-node-sub" x="390" y="190" text-anchor="middle">Convert slide assets to SVG</text></g>
+      <g><rect class="wf-node" x="630" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="730" y="170" text-anchor="middle">3. Conversion engine</text><text class="wf-node-sub" x="730" y="190" text-anchor="middle">Apply brand rules &amp; layouts</text></g>
+      <g><rect class="wf-node wf-node--accent" x="970" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="1070" y="170" text-anchor="middle">4. Brand-compliant shells</text><text class="wf-node-sub" x="1070" y="190" text-anchor="middle">Ready in seconds</text></g>
+      <rect class="wf-rule" x="28" y="250" width="1064" height="1"/>
+      <text class="wf-kpi" x="28" y="282">3–4 days → seconds<tspan class="wf-label" dx="16">Template conversion</tspan></text>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="3.77s" repeatCount="indefinite" path="M150 171 H282 M490 171 H622 M830 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="3.77s" begin="-0.8s" repeatCount="indefinite" path="M150 171 H282 M490 171 H622 M830 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="3.77s" begin="-1.6s" repeatCount="indefinite" path="M150 171 H282 M490 171 H622 M830 171 H962"/></circle>
+    </svg>
+    <figcaption>Project-specific workflow · conceptual view of the described product journey</figcaption>
+  </figure>
+            <div class="panel-body"><div class="panel-block"><h4>The Problem</h4><p>When a client introduced a new brand template or updated an existing one, designers had to manually convert slides into brand-compliant shells. The work took around <strong>3–4 days</strong> and created a dependency on design capacity.</p></div><div class="panel-block"><h4>The Stakes</h4><p>Every new or updated template added another manual conversion task. This slowed client enablement and made the process difficult to scale as more brands and templates were introduced.</p></div><div class="panel-block"><h4>The Job</h4><p>Make template conversion repeatable and dramatically faster, so clients could move from a new brand template to usable, brand-compliant shells without waiting days for manual design work.</p></div><div class="panel-block"><h4>How</h4><p>The workflow converts slide assets into structured SVG-based assets and runs them through an automated conversion pipeline that applies the required brand structure and layouts. The resulting shells can be generated in seconds.</p><p>For the related image and slide captioning workflow, I evaluated <strong>BLIP, Gemini and GPT-4V</strong> and selected Gemini based on the evaluation. This contributed to approximately <strong>97% lower AI captioning cost</strong> and <strong>58% less re-indexing time</strong>.</p></div><div class="panel-block"><h4>Impact</h4><p>Template conversion moved from a <strong>3–4 day manual process to seconds</strong>, reducing the turnaround time and dependency on manual designer effort. The captioning workflow also reduced AI cost and re-indexing time.</p></div></div>
+          
+          </div>
+        </div>
+
+        <!-- AI Search & Discovery -->
+        <div class="detail-panel" id="panel-search">
+          <button class="panel-close" onclick="closePanel('search')" aria-label="Close">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-7aa8e89c5945" /></svg>
+            Close
+          </button>
+          <div class="panel-inner">
+            <div class="panel-meta"><span class="panel-company prezent-text">Prezent.ai</span><span class="panel-dot">·</span><span class="panel-role">Platform PM</span><span class="panel-dot">·</span><span class="panel-date">Project case study</span></div>
+            <h2 class="panel-title">Search &amp; Discovery</h2>
+            <p class="panel-subtitle">Built a novel slide search experience and reduced the “no results” rate from 10% to under 1%.</p>
+
+            <div class="panel-stats">
+              <div class="pstat"><span class="pstat-num">&lt;1%</span><span class="pstat-lbl">No-results rate, down from 10%</span></div>
+              <div class="pstat"><span class="pstat-num">99%</span><span class="pstat-lbl">Of 1,000 real queries solved in evaluation</span></div>
+              <div class="pstat"><span class="pstat-num">$1.2M</span><span class="pstat-lbl">At-risk account retained</span></div>
+            </div>
+
+            <figure class="wf-figure">
+    <svg class="wf" viewBox="0 0 1340 290" style="--wf-vw:1340" role="img" aria-labelledby="wf-search-t wf-search-d">
+      <title id="wf-search-t">Search and Discovery workflow</title><desc id="wf-search-d">At upload, slides are analysed by vision models. Gemini Flash extracts imagery, text, visual flow and business concept metadata, which is stored in a vector database. At search, a query enters Apache Solr for hybrid keyword and semantic retrieval, followed by relevance ranking and results. A 1,000-query evaluation recorded 99 percent solved and the no-results rate fell from 10 percent to under 1 percent.</desc>
+      <text class="wf-eyebrow" x="25" y="24">AT UPLOAD</text>
+      <g><rect class="wf-node" x="25" y="42" width="95" height="60" rx="12"/><text class="wf-node-title" x="72" y="78" text-anchor="middle">Slide</text></g>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M120 72 H151"/>
+      <rect class="wf-zone" x="151" y="25" width="255" height="126" rx="16"/>
+      <text class="wf-eyebrow" x="168" y="46">VISION MODELS</text>
+      <rect class="wf-chip" x="168" y="61" width="62" height="31" rx="15.5"/><text class="wf-label wf-strike" x="199" y="81" text-anchor="middle">YOLO</text>
+      <rect class="wf-chip" x="238" y="61" width="62" height="31" rx="15.5"/><text class="wf-label wf-strike" x="269" y="81" text-anchor="middle">BLIP</text>
+      <rect class="wf-chip-dark" x="308" y="61" width="82" height="31" rx="15.5"/><text class="wf-chip-text" x="349" y="81" text-anchor="middle">Gemini Flash</text>
+      <path class="wf-connector" d="M390 76 C415 76 408 40 432 40 M390 76 C415 76 408 70 432 70 M390 76 C415 76 408 100 432 100 M390 76 C415 76 408 130 432 130"/>
+      <rect class="wf-tag" x="432" y="26" width="120" height="27" rx="13.5"/><text class="wf-tag-text" x="492" y="44" text-anchor="middle">Imagery</text><rect class="wf-tag" x="432" y="56" width="120" height="27" rx="13.5"/><text class="wf-tag-text" x="492" y="74" text-anchor="middle">Text</text><rect class="wf-tag" x="432" y="86" width="120" height="27" rx="13.5"/><text class="wf-tag-text" x="492" y="104" text-anchor="middle">Visual flow</text><rect class="wf-tag" x="432" y="116" width="120" height="27" rx="13.5"/><text class="wf-tag-text" x="492" y="134" text-anchor="middle">Business concept</text>
+      <path class="wf-connector" d="M552 40 C580 40 565 76 595 76 M552 70 C580 70 565 76 595 76 M552 100 C580 100 565 76 595 76 M552 130 C580 130 565 76 595 76"/>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M595 82 H610"/>
+      <ellipse class="wf-outline" cx="655" cy="67" rx="49" ry="11"/>
+      <path class="wf-outline" d="M606 67 V124 C606 138 704 138 704 124 V67"/>
+      <path class="wf-connector" d="M606 124 C606 138 704 138 704 124"/>
+      <text class="wf-node-title wf-node-title--sm" x="655" y="101" text-anchor="middle">Vector DB</text>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M704 95 H735"/>
+      <text class="wf-eyebrow" x="25" y="190">AT SEARCH</text>
+      <g><rect class="wf-node" x="25" y="207" width="95" height="60" rx="12"/><text class="wf-node-title" x="72" y="243" text-anchor="middle">Query</text></g>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M120 237 H735"/>
+      <rect class="wf-zone" x="735" y="55" width="205" height="195" rx="16"/>
+      <text class="wf-eyebrow" x="753" y="77">APACHE SOLR</text>
+      <rect class="wf-node" x="753" y="91" width="169" height="43" rx="12"/><text class="wf-node-title wf-node-title--sm" x="768" y="117">Keyword<tspan class="wf-label" dx="6">· exact match</tspan></text>
+      <rect class="wf-node" x="753" y="146" width="169" height="43" rx="12"/><text class="wf-node-title wf-node-title--sm" x="768" y="172">Semantic<tspan class="wf-label" dx="6">· embeddings</tspan></text>
+      <text class="wf-node-sub" x="837" y="222" text-anchor="middle">hybrid retrieval</text>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M940 153 H974"/>
+      <g><rect class="wf-node" x="974" y="119" width="142" height="70" rx="12"/><text class="wf-node-title" x="1045" y="145" text-anchor="middle">Relevance</text><text class="wf-node-sub" x="1045" y="165" text-anchor="middle">Visuals or data?</text></g>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M1116 153 H1150"/>
+      <g><rect class="wf-node" x="1150" y="121" width="165" height="64" rx="12"/><text class="wf-node-title" x="1232" y="159" text-anchor="middle">Results</text></g>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M1232 121 V92"/>
+      <g><rect class="wf-node" x="1150" y="30" width="165" height="62" rx="12"/><text class="wf-node-title wf-node-title--sm" x="1232" y="54" text-anchor="middle">Eval · 1,000 queries</text><text class="wf-node-sub" x="1232" y="73" text-anchor="middle">99% solved</text></g>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M1232 185 V211"/>
+      <g><rect class="wf-node-dark" x="1150" y="211" width="165" height="57" rx="12"/><text class="wf-node-sub wf-on-dark-muted" x="1232" y="233" text-anchor="middle">No-results rate</text><text class="wf-node-title wf-on-dark" x="1232" y="254" text-anchor="middle">10% → &lt;1%</text></g>
+      <path class="wf-connector wf-connector--soft" marker-end="url(#wf-arrow)" d="M1150 61 H1090 V14 H279 V25"/>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="12.13s" repeatCount="indefinite" path="M120 72 H151 M595 82 H610 M704 95 H735 M120 237 H735 M940 153 H974 M1116 153 H1150 M1232 121 V92 M1232 185 V211 M390 76 C415 76 408 40 432 40 M390 76 C415 76 408 70 432 70 M390 76 C415 76 408 100 432 100 M390 76 C415 76 408 130 432 130 M552 40 C580 40 565 76 595 76 M552 70 C580 70 565 76 595 76 M552 100 C580 100 565 76 595 76 M552 130 C580 130 565 76 595 76"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="12.13s" begin="-0.8s" repeatCount="indefinite" path="M120 72 H151 M595 82 H610 M704 95 H735 M120 237 H735 M940 153 H974 M1116 153 H1150 M1232 121 V92 M1232 185 V211 M390 76 C415 76 408 40 432 40 M390 76 C415 76 408 70 432 70 M390 76 C415 76 408 100 432 100 M390 76 C415 76 408 130 432 130 M552 40 C580 40 565 76 595 76 M552 70 C580 70 565 76 595 76 M552 100 C580 100 565 76 595 76 M552 130 C580 130 565 76 595 76"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="12.13s" begin="-1.6s" repeatCount="indefinite" path="M120 72 H151 M595 82 H610 M704 95 H735 M120 237 H735 M940 153 H974 M1116 153 H1150 M1232 121 V92 M1232 185 V211 M390 76 C415 76 408 40 432 40 M390 76 C415 76 408 70 432 70 M390 76 C415 76 408 100 432 100 M390 76 C415 76 408 130 432 130 M552 40 C580 40 565 76 595 76 M552 70 C580 70 565 76 595 76 M552 100 C580 100 565 76 595 76 M552 130 C580 130 565 76 595 76"/></circle>
+    </svg>
+    <figcaption>Project-specific workflow · conceptual view of slide enrichment and hybrid search</figcaption>
+  </figure>
+
+            <div class="panel-body">
+              <div class="panel-block"><h4>The Problem</h4><p>Users struggled to find slides they knew already existed. Traditional keyword search could miss content when the query did not match the wording or concepts represented on a slide.</p></div>
+              <div class="panel-block"><h4>The Stakes</h4><p>A <strong>$1.2M account</strong> was frustrated because its teams could not find existing slides. On a content platform, an asset users cannot discover loses much of its value. The experience needed to work across <strong>150+ enterprise accounts</strong>.</p></div>
+              <div class="panel-block"><h4>The Job</h4><p>Redefine slide search so users could discover relevant content through both the language they used and the meaning and visual context of the slide, without slowing the platform down.</p></div>
+              <div class="panel-block"><h4>How</h4><p>At upload, vision models analyse each slide and Gemini Flash extracts metadata covering imagery, text, visual flow and business concepts. This enriched metadata is stored in a vector database.</p><p>At search time, Apache Solr combines exact keyword matching with semantic retrieval using embeddings. Results are then ranked for relevance, including whether the user is looking for visuals or data. The workflow was evaluated against 1,000 real queries.</p></div>
+              <div class="panel-block"><h4>Impact</h4><p>The no-results rate dropped from <strong>10% to under 1%</strong>. In the 1,000-query evaluation, <strong>99%</strong> of queries were solved. The improvement helped address the discoverability issue affecting a <strong>$1.2M account</strong>.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Astrid -->
+        <div class="detail-panel" id="panel-astrid">
+          <button class="panel-close" onclick="closePanel('astrid')" aria-label="Close">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-7aa8e89c5945" /></svg>
+            Close
+          </button>
+          <div class="panel-inner">
+            <div class="panel-meta"><span class="panel-company prezent-text">Prezent.ai</span><span class="panel-dot">·</span><span class="panel-role">Product Specialist / APM L2</span></div>
+            <h2 class="panel-title">Astrid Suggestions & LLM-Powered Search</h2>
+            <p class="panel-subtitle">Helping users discover the right search terms when they are unsure what to look for.</p>
+            <div class="panel-stats"><div class="pstat"><span class="pstat-num">20,000+</span><span class="pstat-lbl">Unique users in month one</span></div><div class="pstat"><span class="pstat-num">500K+</span><span class="pstat-lbl">Auto Generator runs</span></div><div class="pstat"><span class="pstat-num">100K+</span><span class="pstat-lbl">BioPharma downloads</span></div></div>
+            <figure class="wf-figure">
+    <svg class="wf" viewBox="-65 0 1250 300" style="--wf-vw:1250" role="img" aria-labelledby="wf-astrid-t wf-astrid-d">
+      <title id="wf-astrid-t">Astrid Suggestions workflow</title><desc id="wf-astrid-d">Search guidance when users need a better query</desc>
+      <text class="wf-eyebrow" x="28" y="30">WORKFLOW</text>
+      <text class="wf-title" x="28" y="60">Astrid Suggestions</text>
+      <text class="wf-sub" x="28" y="82">Search guidance when users need a better query</text>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M150 171 H197"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M405 171 H452"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M660 171 H707"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M915 171 H962"/>
+      <g><rect class="wf-node" x="-50" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="50" y="170" text-anchor="middle">1. User query</text><text class="wf-node-sub" x="50" y="190" text-anchor="middle">What the user types</text></g>
+      <g><rect class="wf-node" x="205" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="305" y="170" text-anchor="middle">2. Exact match</text><text class="wf-node-sub" x="305" y="190" text-anchor="middle">Find direct keyword matches</text></g>
+      <g><rect class="wf-node" x="460" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="560" y="170" text-anchor="middle">3. Partial match</text><text class="wf-node-sub" x="560" y="190" text-anchor="middle">Find related terms</text></g>
+      <g><rect class="wf-node" x="715" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="815" y="170" text-anchor="middle">4. Semantic match</text><text class="wf-node-sub" x="815" y="190" text-anchor="middle">Understand meaning</text></g>
+      <g><rect class="wf-node wf-node--accent" x="970" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="1070" y="170" text-anchor="middle">5. Try Searching For</text><text class="wf-node-sub" x="1070" y="190" text-anchor="middle">Suggest synonyms &amp; alternatives</text></g>
+      <rect class="wf-rule" x="28" y="250" width="1064" height="1"/>
+      <text class="wf-kpi" x="28" y="282">20K+ users<tspan class="wf-label" dx="16">Unique users in month one</tspan></text>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" begin="-0.8s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" begin="-1.6s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+    </svg>
+    <figcaption>Project-specific workflow · conceptual view of the described product journey</figcaption>
+  </figure>
+            <div class="panel-body"><div class="panel-block"><h4>The Problem</h4><p>Users often knew the kind of slide they needed but did not know the exact words to search for. A search experience that depended too heavily on the user’s wording could make relevant content difficult to discover.</p></div><div class="panel-block"><h4>The Stakes</h4><p>When users cannot translate their intent into an effective query, they may miss useful slides or abandon the search. This creates friction in content discovery and reduces the value of the existing library.</p></div><div class="panel-block"><h4>The Job</h4><p>Guide users towards better queries by using the context available in slide metadata and language models, while supporting multiple levels of matching.</p></div><div class="panel-block"><h4>How</h4><p>The search journey supports <strong>exact matching</strong>, <strong>partial matching</strong> and <strong>semantic matching</strong>. When a query does not return a useful match, <strong>Try Searching For</strong> can suggest related terms, synonyms or alternative queries based on the user’s intent and available context.</p><p>Astrid Suggestions adds contextual query guidance so users have a starting point even when they are unsure how to phrase their search. Separately, BioPharma-focused Contextual Intelligence enriched the Auto Generator’s knowledge base with industry context.</p></div><div class="panel-block"><h4>Impact</h4><p>The product reached <strong>20,000+ unique users in its first month</strong> without paid acquisition. The BioPharma-related usage figures shared for this work include <strong>500K+ Auto Generator runs</strong> and <strong>100K+ downloads</strong>.</p></div></div>
+          
+          </div>
+        </div>
+
+        <!-- BP Genius -->
+        <div class="detail-panel" id="panel-bpgenius">
+          <button class="panel-close" onclick="closePanel('bpgenius')" aria-label="Close">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-7aa8e89c5945" /></svg>
+            Close
+          </button>
+          <div class="panel-inner">
+            <div class="panel-meta"><span class="panel-company prezent-text">Prezent.ai</span><span class="panel-dot">·</span><span class="panel-role">Product Specialist / APM L2</span></div>
+            <h2 class="panel-title">BP Genius & Best Practice Library</h2>
+            <p class="panel-subtitle">Transforming existing presentation content for a different industry using prompt-driven AI workflows.</p>
+            <div class="panel-stats"><div class="pstat"><span class="pstat-num">Industry-aware</span><span class="pstat-lbl">Content transformation</span></div><div class="pstat"><span class="pstat-num">Minutes</span><span class="pstat-lbl">Adaptation workflow</span></div></div>
+            <figure class="wf-figure">
+    <svg class="wf" viewBox="-65 0 1250 300" style="--wf-vw:1250" role="img" aria-labelledby="wf-bpgenius-t wf-bpgenius-d">
+      <title id="wf-bpgenius-t">BP Genius workflow</title><desc id="wf-bpgenius-d">Transform existing content for a new industry</desc>
+      <text class="wf-eyebrow" x="28" y="30">WORKFLOW</text>
+      <text class="wf-title" x="28" y="60">BP Genius</text>
+      <text class="wf-sub" x="28" y="82">Transform existing content for a new industry</text>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M150 171 H197"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M405 171 H452"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M660 171 H707"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M915 171 H962"/>
+      <g><rect class="wf-node" x="-50" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="50" y="170" text-anchor="middle">1. Existing deck</text><text class="wf-node-sub" x="50" y="190" text-anchor="middle">Start with approved content</text></g>
+      <g><rect class="wf-node" x="205" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="305" y="170" text-anchor="middle">2. Industry prompt</text><text class="wf-node-sub" x="305" y="190" text-anchor="middle">“Adapt for manufacturing”</text></g>
+      <g><rect class="wf-node" x="460" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="560" y="170" text-anchor="middle">3. System prompt</text><text class="wf-node-sub" x="560" y="190" text-anchor="middle">Apply industry context &amp; rules</text></g>
+      <g><rect class="wf-node" x="715" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="815" y="170" text-anchor="middle">4. AI transformation</text><text class="wf-node-sub" x="815" y="190" text-anchor="middle">Rewrite relevant content</text></g>
+      <g><rect class="wf-node wf-node--accent" x="970" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="1070" y="170" text-anchor="middle">5. New industry deck</text><text class="wf-node-sub" x="1070" y="190" text-anchor="middle">Review and refine</text></g>
+      <rect class="wf-rule" x="28" y="250" width="1064" height="1"/>
+      <text class="wf-kpi" x="28" y="282">Minutes<tspan class="wf-label" dx="16">Industry adaptation workflow</tspan></text>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" begin="-0.8s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" begin="-1.6s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+    </svg>
+    <figcaption>Project-specific workflow · conceptual view of the described product journey</figcaption>
+  </figure>
+            <div class="panel-body"><div class="panel-block"><h4>The Problem</h4><p>Teams repeatedly created similar presentation content for different industries. For example, an existing pharmaceutical brand plan might need to be adapted for a manufacturing or technology audience. Doing this manually meant rewriting and reworking content for each new context.</p></div><div class="panel-block"><h4>The Stakes</h4><p>Manual adaptation consumed team time and made it harder to scale industry-specific presentation creation across multiple domains.</p></div><div class="panel-block"><h4>The Job</h4><p>Enable teams to take existing presentation content and adapt it to a target industry without starting from scratch each time.</p></div><div class="panel-block"><h4>How</h4><p>BP Genius uses a predefined <strong>system prompt</strong> to guide the transformation. A user provides an instruction describing the required change, such as adapting pharmaceutical content for manufacturing. The workflow uses the target-industry context to revise the content and produce an industry-relevant version in minutes.</p></div><div class="panel-block"><h4>Impact</h4><p>BP Genius made it possible to adapt existing presentation content for a new industry in minutes rather than manually rewriting the material from the beginning. No additional percentage improvement is claimed here because a verified measurement was not provided.</p></div></div>
+          
+          </div>
+        </div>
+
+        <!-- Shopify App -->
+        <div class="detail-panel" id="panel-shopify">
+          <button class="panel-close" onclick="closePanel('shopify')" aria-label="Close">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-7aa8e89c5945" /></svg>
+            Close
+          </button>
+          <div class="panel-inner">
+            <div class="panel-meta"><span class="panel-company pumper-text">Pumper</span><span class="panel-dot">·</span><span class="panel-role">Product Manager</span><span class="panel-dot">·</span><span class="panel-date">Mar – Jul 2024</span></div>
+            <h2 class="panel-title">Shopify App Launch</h2>
+            <p class="panel-subtitle">Taking a Shopify app through the Built for Shopify certification journey.</p>
+            <div class="panel-stats"><div class="pstat"><span class="pstat-num">4,000+</span><span class="pstat-lbl">Merchants</span></div><div class="pstat"><span class="pstat-num">+20%</span><span class="pstat-lbl">Merchant sign-ups</span></div><div class="pstat"><span class="pstat-num">Built for Shopify</span><span class="pstat-lbl">Certification</span></div></div>
+            <figure class="wf-figure">
+    <svg class="wf" viewBox="0 0 1200 520" style="--wf-vw:1200" role="img" aria-labelledby="wf-shopify-t wf-shopify-d">
+      <title id="wf-shopify-t">Pumper merchant growth journey</title><desc id="wf-shopify-d">A rising merchant adoption curve, from app discovery and trust to adoption and more than four thousand merchants.</desc>
+      <text class="wf-eyebrow" x="70" y="58">MERCHANT ADOPTION JOURNEY</text>
+      <text class="wf-title" x="70" y="92">From app discovery to a growing merchant base</text>
+      <path d="M90 385 C250 380 280 350 400 330 S600 275 710 235 S930 150 1090 105 L1090 410 L90 410 Z" fill="url(#wf-area)"/>
+      <path class="wf-data-line" d="M90 385 C250 380 280 350 400 330 S600 275 710 235 S930 150 1090 105"/>
+      <circle class="wf-data-point" cx="90" cy="385" r="6"/>
+      <circle class="wf-data-point" cx="400" cy="330" r="6"/>
+      <circle class="wf-data-point" cx="710" cy="235" r="6"/>
+      <circle class="wf-data-point wf-data-point--end" cx="1090" cy="105" r="7.5"/>
+      <g transform="translate(70 430)"><text class="wf-node-title">App discovery</text><text class="wf-label" y="20">Merchant finds the app</text></g>
+      <g transform="translate(345 375)"><text class="wf-node-title">Trust &amp; certification</text><text class="wf-label" y="20">Built for Shopify</text></g>
+      <g transform="translate(650 280)"><text class="wf-node-title">Adoption</text><text class="wf-label" y="20">Improved merchant sign-ups</text></g>
+      <g transform="translate(925 55)"><text class="wf-kpi">4,000+</text><text class="wf-label" y="22">Merchants</text></g>
+      <text class="wf-label" x="70" y="505">Reported outcomes: 4,000+ merchants · 20% increase in merchant sign-ups</text>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="9.93s" repeatCount="indefinite" path="M90 385 C250 380 280 350 400 330 S600 275 710 235 S930 150 1090 105"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="9.93s" begin="-0.8s" repeatCount="indefinite" path="M90 385 C250 380 280 350 400 330 S600 275 710 235 S930 150 1090 105"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="9.93s" begin="-1.6s" repeatCount="indefinite" path="M90 385 C250 380 280 350 400 330 S600 275 710 235 S930 150 1090 105"/></circle>
+    </svg>
+    <figcaption>Project-specific workflow · conceptual view of the described product journey</figcaption>
+  </figure>
+            <div class="panel-body"><div class="panel-block"><h4>The Problem</h4><p>The app needed to meet Shopify’s Built for Shopify requirements and establish credibility with merchants in the Shopify ecosystem.</p></div><div class="panel-block"><h4>The Stakes</h4><p>Certification was an important trust signal for merchants evaluating apps. Meeting the requirements also meant aligning the product experience with Shopify’s expectations.</p></div><div class="panel-block"><h4>The Job</h4><p>Drive the product work needed to achieve Built for Shopify certification and support merchant acquisition.</p></div><div class="panel-block"><h4>How</h4><p>The work involved translating certification expectations into product requirements, coordinating implementation with engineering and design, and prioritising the changes needed to meet the standards.</p></div><div class="panel-block"><h4>Impact</h4><p>The app achieved <strong>Built for Shopify</strong> certification and supported a <strong>20% increase in merchant sign-ups</strong>. The product had more than <strong>4,000 merchants</strong>.</p></div></div>
+          
+          </div>
+        </div>
+
+        <!-- Support Knowledge Agent -->
+        <div class="detail-panel" id="panel-support-agent">
+          <button class="panel-close" onclick="closePanel('support-agent')" aria-label="Close">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-7aa8e89c5945" /></svg>
+            Close
+          </button>
+          <div class="panel-inner">
+            <div class="panel-meta"><span class="panel-company prezent-text">Prezent.ai</span><span class="panel-dot">·</span><span class="panel-role">Product Specialist / APM L2</span></div>
+            <h2 class="panel-title">Support Knowledge Agent</h2>
+            <p class="panel-subtitle">An AI knowledge-base chatbot that answers from company documentation and escalates genuine bugs to Jira.</p>
+            <div class="panel-stats">
+              <div class="pstat"><span class="pstat-num">Self-service</span><span class="pstat-lbl">Faster answers from internal knowledge</span></div>
+              <div class="pstat"><span class="pstat-num">Jira</span><span class="pstat-lbl">Automated bug escalation</span></div>
+            </div>
+            <figure class="wf-figure">
+    <svg class="wf" viewBox="-65 0 1250 300" style="--wf-vw:1250" role="img" aria-labelledby="wf-support-t wf-support-d">
+      <title id="wf-support-t">Support Knowledge Agent workflow</title><desc id="wf-support-d">An AI knowledge-base chatbot answers from release notes, FAQs, Confluence pages and past support history, and escalates genuine bugs to Jira.</desc>
+      <text class="wf-eyebrow" x="28" y="30">WORKFLOW</text>
+      <text class="wf-title" x="28" y="60">Support Knowledge Agent</text>
+      <text class="wf-sub" x="28" y="82">Answer from company knowledge or escalate to Jira</text>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M150 171 H452"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M660 171 C811 171 811 135 962 135"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M660 171 C811 171 811 207 962 207"/>
+      <g><rect class="wf-node" x="-50" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="50" y="170" text-anchor="middle">1. Knowledge sources</text><text class="wf-node-sub" x="50" y="189" text-anchor="middle">Release notes · FAQs</text><text class="wf-node-sub" x="50" y="202" text-anchor="middle">Confluence · Support history</text></g>
+      <g><rect class="wf-node wf-node--accent" x="460" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="560" y="170" text-anchor="middle">2. KB chatbot</text><text class="wf-node-sub" x="560" y="190" text-anchor="middle">Answers from company knowledge</text></g>
+      <g><rect class="wf-node" x="970" y="105" width="200" height="60" rx="12"/><text class="wf-node-title" x="1070" y="130" text-anchor="middle">3a. Answer</text><text class="wf-node-sub" x="1070" y="148" text-anchor="middle">Immediate response</text></g>
+      <g><rect class="wf-node" x="970" y="177" width="200" height="60" rx="12"/><text class="wf-node-title" x="1070" y="202" text-anchor="middle">3b. Jira escalation</text><text class="wf-node-sub" x="1070" y="220" text-anchor="middle">Genuine bugs, with context</text></g>
+      <rect class="wf-rule" x="28" y="250" width="1064" height="1"/>
+      <text class="wf-kpi" x="28" y="282">Self-service<tspan class="wf-label" dx="16">Faster answers from internal knowledge</tspan></text>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="8.69s" repeatCount="indefinite" path="M150 171 H452 M660 171 C811 171 811 135 962 135 M660 171 C811 171 811 207 962 207"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="8.69s" begin="-0.8s" repeatCount="indefinite" path="M150 171 H452 M660 171 C811 171 811 135 962 135 M660 171 C811 171 811 207 962 207"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="8.69s" begin="-1.6s" repeatCount="indefinite" path="M150 171 H452 M660 171 C811 171 811 135 962 135 M660 171 C811 171 811 207 962 207"/></circle>
+    </svg>
+    <figcaption>Project-specific workflow · conceptual view of the described product journey</figcaption>
+  </figure>
+            <div class="panel-body">
+              <div class="panel-block"><h4>The Problem</h4><p>Support requests and the ticket backlog were growing. Users needed a reliable way to find answers, while genuine bug reports took too long to reach the teams responsible for fixing them.</p></div>
+              <div class="panel-block"><h4>The Stakes</h4><p>Without a knowledge-based self-service option, support teams had to spend time answering repeat questions. Bug reports also risked getting delayed in the support queue before reaching the right owners.</p></div>
+              <div class="panel-block"><h4>The Job</h4><p>Create an AI knowledge-base agent that could answer questions using company documentation and automatically route genuine bugs to Jira with the relevant context.</p></div>
+              <div class="panel-block"><h4>How</h4><p>Release notes, FAQs, Confluence pages and past support history are used as the knowledge base. The chatbot retrieves answers from this company knowledge rather than guessing. Known questions receive an immediate response, while genuine bugs are escalated to Jira automatically with the relevant details attached.</p></div>
+              <div class="panel-block"><h4>Impact</h4><p>The workflow is designed to reduce repetitive support requests, ease ticket backlog pressure and speed up bug handoff through automated Jira escalation.</p></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- HRMS Sync -->
+        <div class="detail-panel" id="panel-hrms">
+          <button class="panel-close" onclick="closePanel('hrms')" aria-label="Close">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-7aa8e89c5945" /></svg>
+            Close
+          </button>
+          <div class="panel-inner">
+            <div class="panel-meta"><span class="panel-company tartan-text">TartanHQ</span><span class="panel-dot">·</span><span class="panel-role">Associate Product Manager</span><span class="panel-dot">·</span><span class="panel-date">Apr – Dec 2023</span></div>
+            <h2 class="panel-title">HRMS Sync: Payroll API Product</h2>
+            <p class="panel-subtitle">Connecting payroll systems to make employee income data accessible for verification workflows.</p>
+            <div class="panel-stats"><div class="pstat"><span class="pstat-num">20+</span><span class="pstat-lbl">Payroll integrations</span></div><div class="pstat"><span class="pstat-num">India + US</span><span class="pstat-lbl">Payroll coverage</span></div></div>
+            <figure class="wf-figure">
+    <svg class="wf" viewBox="-65 0 1250 300" style="--wf-vw:1250" role="img" aria-labelledby="wf-hrms-t wf-hrms-d">
+      <title id="wf-hrms-t">HRMS Sync workflow</title><desc id="wf-hrms-d">Payroll integrations for income verification</desc>
+      <text class="wf-eyebrow" x="28" y="30">WORKFLOW</text>
+      <text class="wf-title" x="28" y="60">HRMS Sync</text>
+      <text class="wf-sub" x="28" y="82">Payroll integrations for income verification</text>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M150 171 H197"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M405 171 H452"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M660 171 H707"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M915 171 H962"/>
+      <g><rect class="wf-node" x="-50" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="50" y="170" text-anchor="middle">1. Payroll systems</text><text class="wf-node-sub" x="50" y="190" text-anchor="middle">20+ providers</text></g>
+      <g><rect class="wf-node" x="205" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="305" y="170" text-anchor="middle">2. Connectors</text><text class="wf-node-sub" x="305" y="190" text-anchor="middle">Provider-specific APIs</text></g>
+      <g><rect class="wf-node" x="460" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="560" y="170" text-anchor="middle">3. HRMS Sync API</text><text class="wf-node-sub" x="560" y="190" text-anchor="middle">Normalize payroll data</text></g>
+      <g><rect class="wf-node" x="715" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="815" y="170" text-anchor="middle">4. Verification</text><text class="wf-node-sub" x="815" y="190" text-anchor="middle">Retrieve income details</text></g>
+      <g><rect class="wf-node wf-node--accent" x="970" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="1070" y="170" text-anchor="middle">5. Client systems</text><text class="wf-node-sub" x="1070" y="190" text-anchor="middle">Consume verified data</text></g>
+      <rect class="wf-rule" x="28" y="250" width="1064" height="1"/>
+      <text class="wf-kpi" x="28" y="282">20+<tspan class="wf-label" dx="16">Payroll integrations</tspan></text>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" begin="-0.8s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" begin="-1.6s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+    </svg>
+    <figcaption>Project-specific workflow · conceptual view of the described product journey</figcaption>
+  </figure>
+            <div class="panel-body"><div class="panel-block"><h4>The Problem</h4><p>Fintech and lending workflows needed employee payroll information for income verification. Connecting to each HRMS or payroll provider separately created integration work across multiple systems.</p></div><div class="panel-block"><h4>The Stakes</h4><p>Without a scalable integration layer, every new payroll provider could require additional implementation effort, slowing coverage expansion and customer onboarding.</p></div><div class="panel-block"><h4>The Job</h4><p>Build and expand a unified HRMS Sync integration capability that could connect with multiple payroll providers and make payroll data available to downstream verification workflows.</p></div><div class="panel-block"><h4>How</h4><p>HRMS Sync connected with payroll providers through their respective integrations and exposed the required payroll information through a common product/API workflow. Coverage expanded to <strong>20+ payroll integrations</strong> across India and the US.</p></div><div class="panel-block"><h4>Impact</h4><p>Expanded payroll connectivity to <strong>20+ providers</strong> across India and the US, supporting customers including <strong>Jupiter Money, Qube Health and Jelly Bean</strong>.</p></div></div>
+          
+          </div>
+        </div>
+
+        <!-- OCR -->
+        <div class="detail-panel" id="panel-ocr">
+          <button class="panel-close" onclick="closePanel('ocr')" aria-label="Close">
+            <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-7aa8e89c5945" /></svg>
+            Close
+          </button>
+          <div class="panel-inner">
+            <div class="panel-meta"><span class="panel-company tartan-text">TartanHQ</span><span class="panel-dot">·</span><span class="panel-role">Product Analyst → Associate Product Manager</span></div>
+            <h2 class="panel-title">OCR Model & Payslip Extraction</h2>
+            <p class="panel-subtitle">Improving payslip data extraction to reduce processing turnaround time.</p>
+            <div class="panel-stats"><div class="pstat"><span class="pstat-num">10 → 4 minutes</span><span class="pstat-lbl">Processing turnaround time</span></div><div class="pstat"><span class="pstat-num">Nanonets</span><span class="pstat-lbl">OCR model platform</span></div></div>
+            <figure class="wf-figure">
+    <svg class="wf" viewBox="-65 0 1250 300" style="--wf-vw:1250" role="img" aria-labelledby="wf-ocr-t wf-ocr-d">
+      <title id="wf-ocr-t">OCR Model &amp; Payslip Extraction workflow</title><desc id="wf-ocr-d">A horizontal five-step workflow from payslip upload through OCR extraction, field review, model refinement and structured output. Processing time improved from ten to four minutes.</desc>
+      <text class="wf-eyebrow" x="28" y="30">WORKFLOW</text>
+      <text class="wf-title" x="28" y="60">OCR Model &amp; Payslip Extraction</text>
+      <text class="wf-sub" x="28" y="82">From payslip document to structured data</text>
+      <path class="wf-connector" marker-end="url(#wf-arrow)" d="M150 171 H197"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M405 171 H452"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M660 171 H707"/><path class="wf-connector" marker-end="url(#wf-arrow)" d="M915 171 H962"/>
+      <g><rect class="wf-node" x="-50" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="50" y="170" text-anchor="middle">1. Payslip upload</text><text class="wf-node-sub" x="50" y="190" text-anchor="middle">Employee document</text></g>
+      <g><rect class="wf-node wf-node--accent" x="205" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="305" y="170" text-anchor="middle">2. OCR extraction</text><text class="wf-node-sub" x="305" y="190" text-anchor="middle">Capture payslip fields</text></g>
+      <g><rect class="wf-node" x="460" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="560" y="170" text-anchor="middle">3. Field review</text><text class="wf-node-sub" x="560" y="190" text-anchor="middle">Evaluate extraction quality</text></g>
+      <g><rect class="wf-node" x="715" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="815" y="170" text-anchor="middle">4. Model refinement</text><text class="wf-node-sub" x="815" y="190" text-anchor="middle">Improve field capture</text></g>
+      <g><rect class="wf-node wf-node--accent" x="970" y="130" width="200" height="82" rx="12"/><text class="wf-node-title" x="1070" y="170" text-anchor="middle">5. Structured output</text><text class="wf-node-sub" x="1070" y="190" text-anchor="middle">Ready for verification</text></g>
+      <rect class="wf-rule" x="28" y="250" width="1064" height="1"/>
+      <text class="wf-kpi" x="28" y="282">10 → 4 minutes<tspan class="wf-label" dx="16">Processing turnaround time</tspan></text>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" begin="-0.8s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+      <circle class="wf-dot" r="5.5"><animateMotion dur="1.79s" begin="-1.6s" repeatCount="indefinite" path="M150 171 H197 M405 171 H452 M660 171 H707 M915 171 H962"/></circle>
+    </svg>
+    <figcaption>Project-specific workflow · conceptual view of the described product journey</figcaption>
+  </figure>
+            <div class="panel-body"><div class="panel-block"><h4>The Problem</h4><p>Extracting structured information from employee payslips was taking too long. The processing workflow needed more reliable extraction to reduce manual review and turnaround time.</p></div><div class="panel-block"><h4>The Stakes</h4><p>Longer processing time slowed the income-verification workflow and increased the effort required to handle payslip documents.</p></div><div class="panel-block"><h4>The Job</h4><p>Improve the OCR-based payslip extraction workflow so key information could be captured more efficiently and passed into downstream verification processes.</p></div><div class="panel-block"><h4>How</h4><p>The OCR model was iteratively trained and evaluated using payslip examples. Extraction quality was reviewed and the model was refined to improve the capture of relevant fields.</p></div><div class="panel-block"><h4>Impact</h4><p>Reduced payslip processing turnaround time from <strong>10 minutes to 4 minutes</strong>.</p></div></div>
+          
+          </div>
+        </div>
+
+      </div><!-- /.container -->
+    </section>
+
+    <!-- ═══════════════════════════════
+         CTA
+    ══════════════════════════════════ -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-card fade-up">
+          <p class="cta-eyebrow">Let's connect</p>
+          <h2 class="cta-heading">Building something interesting?</h2>
+          <p class="cta-sub">I'm always open to conversations about AI products, search, and meaningful PM roles.</p>
+          <div class="cta-btns">
+            <a href="contact.html" class="btn-primary btn-white">
+              <svg width="14" height="14" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><use href="#icon-6ef7ca6872d2" /></svg>
+              Get in touch
+            </a>
+            <a href="about.html" class="btn-ghost btn-ghost-inv">My journey &rarr;</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-row">
+      <span class="footer-name">Jyoti Sajwan</span>
+      <span class="footer-copy">&copy; 2026 · Associate Product Manager</span>
+      <div class="footer-links">
+        <a href="about.html" class="footer-link">About</a>
+        <a href="contact.html" class="footer-link">Contact</a>
+        <a href="https://linkedin.com/in/jyotisajwan" target="_blank" rel="noopener" class="footer-link">LinkedIn</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="main.js"></script>
+</body>
+</html>
